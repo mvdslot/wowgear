@@ -4,7 +4,7 @@
             "displayName": "Nemesis Belt",
             "properties": [
                 {
-                    "statId": "stamina",
+                    "statCode": "sta",
                     "amount": 25
                 }
             ]

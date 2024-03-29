@@ -3,18 +3,20 @@ package wowgear
 import "errors"
 
 type Stat struct {
-	Id          string
-	DisplayName string
-	Value       float64
+	Code        string		`json:"code,omitempty"`
+	DisplayName string		`json:"displayName,omitempty"`
+	Value       float64		`json:"value,omitempty"`
 }
 
-var allStats []Stat
+type StatList struct{
+	Stats []Stat
+} 
 
-func getStatValue(statId string) (float64, error) {
-	for _, stat := range allStats {
-		if stat.Id == statId {
+func getStatValue(statCode string, statList *StatList) (float64, error) {
+	for _, stat := range statList.Stats {
+		if stat.Code == statCode {
 			return stat.Value, nil
 		}
 	}
-	return 0, errors.New("unknown stat id " + statId)
+	return 0, errors.New("unknown stat code " + statCode)
 }

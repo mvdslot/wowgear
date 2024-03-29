@@ -1,9 +1,8 @@
 package wowgear
 
 type Slot struct {
-	Id string
+	Type string
 	DisplayName string
-	Amount int
 }
 
 type Equipment struct {
@@ -13,109 +12,121 @@ type Equipment struct {
 
 type Build struct {
 	Equipments []Equipment
+	StatList *StatList
+}
+
+type Set struct {
+	Id string
+	DisplayName string
+}
+
+type SetBonus struct {
+	SetId string
+	Amount int
+	Bonus Property
 }
 
 var BuildInstance = Build{
 		Equipments: []Equipment{
 		{
 			Slot: &Slot{
-				Id: "head",
+				Type: "head",
 				DisplayName: "Head",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "neck",
+				Type: "neck",
 				DisplayName: "Neck",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "shoulder",
+				Type: "shoulder",
 				DisplayName: "Shoulders",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "back",
+				Type: "back",
 				DisplayName: "Back",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "chest",
+				Type: "chest",
 				DisplayName: "Chest",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "bracer",
+				Type: "bracer",
 				DisplayName: "Bracers",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "weapon_1",
+				Type: "weapon_main",
 				DisplayName: "Main Hand Weapon",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "weapon_2",
+				Type: "weapon_off",
 				DisplayName: "Off Hand Weapon",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "ranged",
+				Type: "ranged",
 				DisplayName: "Ranged Weapon",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "hand",
+				Type: "hand",
 				DisplayName: "Hands",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "belt",
+				Type: "belt",
 				DisplayName: "Belt",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "leg",
+				Type: "leg",
 				DisplayName: "Legs",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "boot",
+				Type: "boot",
 				DisplayName: "Boots",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "ring_1",
+				Type: "ring",
 				DisplayName: "Ring 1",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "ring_2",
+				Type: "ring",
 				DisplayName: "Ring 2",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "trinket_1",
+				Type: "trinket",
 				DisplayName: "Trinket 1",
 			},
 		},
 		{
 			Slot: &Slot{
-				Id: "trinket_2",
+				Type: "trinket",
 				DisplayName: "Trinket 2",
 			},
 		},
@@ -127,7 +138,7 @@ func (b *Build) GetValue() (float64, error) {
 
 	for _, eq := range b.Equipments {
 		for _, p := range eq.Item.Properties {
-			val, err := getStatValue(p.StatId)
+			val, err := getStatValue(p.StatCode, b.StatList)
 			if err != nil {
 				return 0, err
 			}
@@ -135,6 +146,8 @@ func (b *Build) GetValue() (float64, error) {
 			total += float64(p.Amount) * val
 		}
 	}
+	// TODO: Add set bonuses
+
 
 	return total, nil
 }

@@ -1,0 +1,55 @@
+{
+    "stats": [
+        {
+            "code": "sta",
+            "displayName": "Stamina",
+            "value": 1.2
+        },
+        {
+            "code": "int",
+            "displayName": "Intellect",
+            "value": 1.0
+        },
+        {
+            "code": "spi",
+            "displayName": "Spirit",
+            "value": 0.33
+        },
+        {
+            "code": "agi",
+            "displayName": "Agility",
+            "value": 0.0
+        },
+        {
+            "code": "str",
+            "displayName": "Strength",
+            "value": 0.0
+        },
+        {
+            "code": "sp",
+            "displayName": "Spellpower",
+            "value": 2.0
+        },
+        {
+            "code": "sps",
+            "displayName": "Spellpower (Shadow)",
+            "value": 1.75
+        },
+        {
+            "code": "spf",
+            "displayName": "Spellpower (Fire)",
+            "value": 0.25
+        },
+        {
+            "code": "sph",
+            "displayName": "Spell Hit Chance",
+            "value": 15.0
+        },
+        {
+            "code": "spc",
+            "displayName": "Spell Crit Chance",
+            "value": 12.5
+        }
+
+    ]
+}
