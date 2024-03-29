@@ -1,0 +1,13 @@
+{
+    "items": [
+        {
+            "displayName": "Nemesis Belt",
+            "properties": [
+                {
+                    "statId": "stamina",
+                    "amount": 25
+                }
+            ]
+        }
+    ]
+}
