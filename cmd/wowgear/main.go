@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"log/slog"
 	"os"
 	"wowgear/internal/wowgear"
@@ -37,6 +38,16 @@ func main() {
 		slog.Error("unable to unmarshal json", "error", err.Error())
 	}
 
+	build := wowgear.InitBuild()
+	build.StatList = stats
+
+	build.Evaluate(0, inv)
+
+	for _, eq := range wowgear.BestBuildFound.Equipments {
+		if eq.Item != nil {
+			fmt.Printf("%#v\n", eq.Item.DisplayName)
+		}
+	}
 }
 
 

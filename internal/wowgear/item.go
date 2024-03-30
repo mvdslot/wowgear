@@ -11,8 +11,5 @@ type Item struct {
 	SlotType string				`json:"slotType,omitempty"`
 	IsTwoHand bool				`json:"isTwoHand,omitempty"`
 	IsAnyHand bool				`json:"isAnyHand,omitempty"`
-}
-
-type Inventory struct {
-	Items []*Item				`json:"items,omitempty"`
+	SetId string				`json:"setId,omitempty"`
 }

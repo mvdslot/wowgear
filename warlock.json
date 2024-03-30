@@ -49,7 +49,26 @@
             "code": "spc",
             "displayName": "Spell Crit Chance",
             "value": 12.5
+        },
+        {
+            "code": "rs",
+            "displayName": "Shadow Resistance",
+            "value": 0.2
+        },
+        {
+            "code": "rf",
+            "displayName": "Fire Resistance",
+            "value": 0.2
+        },
+        {
+            "code": "rfr",
+            "displayName": "Frost Resistance",
+            "value": 0.2
+        },
+        {
+            "code": "h5",
+            "displayName": "Health per 5 sec",
+            "value": 0.2
         }
-
     ]
 }

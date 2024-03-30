@@ -2,10 +2,68 @@
     "items": [
         {
             "displayName": "Nemesis Belt",
+            "slotType": "waist",
+            "setId": "nemesis",
             "properties": [
                 {
                     "statCode": "sta",
+                    "amount": 18
+                },
+                {
+                    "statCode": "int",
+                    "amount": 8
+                },
+                {
+                    "statCode": "spi",
+                    "amount": 6
+                },
+                {
+                    "statCode": "rs",
+                    "amount": 10
+                },
+                {
+                    "statCode": "sp",
                     "amount": 25
+                },
+                {
+                    "statCode": "spc",
+                    "amount": 1
+                }
+
+            ]
+        },
+        {
+            "displayName": "Nemesis Skullcap",
+            "slotType": "head",
+            "setId": "nemesis",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 26
+                },
+                {
+                    "statCode": "int",
+                    "amount": 16
+                },
+                {
+                    "statCode": "spi",
+                    "amount": 6
+                },
+                {
+                    "statCode": "rs",
+                    "amount": 10
+                },
+                {
+                    "statCode": "rfr",
+                    "amount": 10
+                },
+                {
+                    "statCode": "h5",
+                    "amount": 4
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 32
                 }
             ]
         }

@@ -9,7 +9,7 @@ type Stat struct {
 }
 
 type StatList struct{
-	Stats []Stat
+	Stats []*Stat
 } 
 
 func getStatValue(statCode string, statList *StatList) (float64, error) {
