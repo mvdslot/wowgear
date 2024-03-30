@@ -433,6 +433,254 @@
                     "amount": 32
                 }
             ]
+        },
+        {
+            "displayName": "Doomcaller's Mantle",
+            "slotType": "shoulder",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 20
+                },
+                {
+                    "statCode": "int",
+                    "amount": 11
+                },
+                {
+                    "statCode": "spi",
+                    "amount": 4
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 28
+                },
+                {
+                    "statCode": "spp",
+                    "amount": 10
+                },
+                {
+                    "statCode": "sph",
+                    "amount": 1
+                }
+            ]
+        },
+        {
+            "displayName": "Bloodvine Vest",
+            "slotType": "chest",
+            "setId": "bloodvine",
+            "properties": [
+                {
+                    "statCode": "int",
+                    "amount": 13
+                },
+                {
+                    "statCode": "sph",
+                    "amount": 2
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 27
+                }
+            ]
+        },
+        {
+            "displayName": "Bloodvine Leggings",
+            "slotType": "legs",
+            "setId": "bloodvine",
+            "properties": [
+                {
+                    "statCode": "int",
+                    "amount": 6
+                },
+                {
+                    "statCode": "sph",
+                    "amount": 1
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 37
+                }
+            ]
+        },
+        {
+            "displayName": "Bloodvine Boots",
+            "slotType": "feet",
+            "setId": "bloodvine",
+            "properties": [
+                {
+                    "statCode": "int",
+                    "amount": 16
+                },
+                {
+                    "statCode": "sph",
+                    "amount": 1
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 19
+                }
+            ]
+        },
+        {
+            "displayName": "Shackles of the Unscarred",
+            "slotType": "wrist",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 9
+                },
+                {
+                    "statCode": "int",
+                    "amount": 12
+                },
+                {
+                    "statCode": "spp",
+                    "amount": 10
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 21
+                }
+            ]
+        },
+        {
+            "displayName": "Staff of the Shadow Flame",
+            "slotType": "weapon",
+            "isTwoHand": true,
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 24
+                },
+                {
+                    "statCode": "int",
+                    "amount": 29
+                },
+                {
+                    "statCode": "spi",
+                    "amount": 18
+                },
+                {
+                    "statCode": "spc",
+                    "amount": 2
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 84
+                }
+            ]
+        },
+        {
+            "displayName": "Staff of the Ruins",
+            "slotType": "weapon",
+            "isTwoHand": true,
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 24
+                },
+                {
+                    "statCode": "int",
+                    "amount": 23
+                },
+                {
+                    "statCode": "spi",
+                    "amount": 14
+                },
+                {
+                    "statCode": "spc",
+                    "amount": 1
+                },
+                {
+                    "statCode": "sph",
+                    "amount": 1
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 60
+                }
+            ]
+        },
+        {
+            "displayName": "Blessed Qiraji Acolyte Staff",
+            "slotType": "weapon",
+            "isTwoHand": true,
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 32
+                },
+                {
+                    "statCode": "int",
+                    "amount": 33
+                },
+                {
+                    "statCode": "spc",
+                    "amount": 1
+                },
+                {
+                    "statCode": "sph",
+                    "amount": 2
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 76
+                }
+            ]
+        },
+        {
+            "displayName": "Cloak of Consumption",
+            "slotType": "back",
+            "properties": [
+                {
+                    "statCode": "int",
+                    "amount": 10
+                },
+                {
+                    "statCode": "sph",
+                    "amount": 1
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 23
+                }
+            ]
+        },
+        {
+            "displayName": "Cloak of the Brood Lord",
+            "slotType": "back",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 10
+                },
+                {
+                    "statCode": "int",
+                    "amount": 14
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 28
+                }
+            ]
+        },
+        {
+            "displayName": "Shroud of Unspoken Names",
+            "slotType": "back",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 16
+                },
+                {
+                    "statCode": "int",
+                    "amount": 9
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 18
+                }
+            ]
         }
     ],
     "sets": [
@@ -482,6 +730,20 @@
                     {
                         "statCode": "sp",
                         "amount": 12
+                    }
+                }
+            ]
+        },
+        {
+            "id": "bloodvine",
+            "displayName": "Bloodvine Garb",
+            "bonuses": [
+                {
+                    "amount": 3,
+                    "bonus":
+                    {
+                        "statCode": "spc",
+                        "amount": 2
                     }
                 }
             ]
