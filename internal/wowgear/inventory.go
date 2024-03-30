@@ -3,6 +3,7 @@ package wowgear
 
 type Inventory struct {
 	Items []*Item				`json:"items,omitempty"`
+	Sets  []*Set				`json:"sets,omitempty"`
 }
 
 func (i *Inventory) GetItemsForSlotType(slotType string) []*Item {

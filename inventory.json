@@ -67,5 +67,21 @@
                 }
             ]
         }
+    ],
+    "sets": [
+        {
+            "id": "nemesis",
+            "displayName": "Nemesis",
+            "bonuses": [
+                {
+                    "amount": 3,
+                    "bonus":
+                    {
+                        "statCode": "sp",
+                        "amount": 23
+                    }
+                }
+            ]
+        }
     ]
 }

@@ -1,6 +1,9 @@
 package wowgear
 
-import "log/slog"
+import (
+	"log/slog"
+	"os"
+)
 
 type Slot struct {
 	Type        string
@@ -18,14 +21,14 @@ type Build struct {
 }
 
 type Set struct {
-	Id          string
-	DisplayName string
-	Bonuses		[]SetBonus
+	Id          string					`json:"id,omitempty"`
+	DisplayName string					`json:"displayName,omitempty"`
+	Bonuses		[]SetBonus				`json:"bonuses,omitempty"`
 }
 
 type SetBonus struct {
-	Amount int
-	Bonus  Property
+	Amount int							`json:"amount,omitempty"`
+	Bonus  Property						`json:"bonus,omitempty"`
 }
 
 var highestValueFound float64
@@ -141,29 +144,63 @@ func InitBuild() *Build {
 	}
 }
 
-func (b *Build) GetValue() (float64, error) {
+func (b *Build) GetValue(sets []*Set) (float64, error) {
 	total := 0.0
 
 	for _, eq := range b.Equipments {
-		if eq.Item != nil {
-			for _, p := range eq.Item.Properties {
-				val, err := getStatValue(p.StatCode, b.StatList)
+		itemValue, err := b.getItemValue(eq.Item)
+		if err != nil {
+			return 0, err
+		}
+		total += itemValue
+	}
+	// TODO: Add set bonuses
+	for _, set := range sets {
+		itemsInSet := b.countItemsInSet(set.Id)
+		for _, setBonus := range set.Bonuses {
+			if itemsInSet >= setBonus.Amount {
+				value, err := getStatValue(setBonus.Bonus.StatCode, b.StatList)
 				if err != nil {
 					return 0, err
 				}
-
-				total += float64(p.Amount) * val
+				total += float64(setBonus.Bonus.Amount) * value
 			}
 		}
 	}
-	// TODO: Add set bonuses
 
+	return total, nil
+}
+
+func (b *Build) countItemsInSet(setId string) int {
+	items := 0
+
+	for _, eq := range b.Equipments {
+		if eq.Item != nil && eq.Item.SetId == setId {
+			items++
+		}
+	}
+	return items
+}
+
+func (b *Build) getItemValue(item *Item) (float64, error) {
+	total := 0.0
+	if item == nil {
+		return total, nil
+	}
+	for _, p := range item.Properties {
+		val, err := getStatValue(p.StatCode, b.StatList)
+		if err != nil {
+			return 0, err
+		}
+
+		total += float64(p.Amount) * val
+	}
 	return total, nil
 }
 
 func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 	if fromEquip == len(b.Equipments) {
-		value, err := b.GetValue()
+		value, err := b.GetValue(inv.Sets)
 		if err != nil {
 			slog.Error(err.Error())
 			return
@@ -192,13 +229,42 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 		b.Evaluate(fromEquip+1, inv)
 	}
 
-	for _, item := range items {
-		b.Equipments[fromEquip].Item = item
-		next := fromEquip+1
-		if item.IsTwoHand{
-			next++
+	if shouldEvaluateAll(items) {
+		for _, item := range items {
+			b.Equipments[fromEquip].Item = item
+			next := fromEquip+1
+			if item.IsTwoHand{
+				next++
+			}
+
+			b.Evaluate(next, inv)
 		}
+	} else {
+		var bestInSlotValue float64
+		var bestInslotItem *Item
+		for _, item := range items {
+			itemValue, err := b.getItemValue(item)
+			if err != nil {
+				slog.Error(err.Error())
+				os.Exit(1)
+			}
+			if itemValue > bestInSlotValue {
+				bestInSlotValue = itemValue
+				bestInslotItem = item
+			}
+		}
+		b.Equipments[fromEquip].Item = bestInslotItem
+		next := fromEquip+1
 
 		b.Evaluate(next, inv)
 	}
+}
+
+func shouldEvaluateAll(items []*Item) bool {
+	for _, item := range items {
+		if item.SetId != "" || item.IsTwoHand {
+			return true
+		}
+	}
+	return false
 }
