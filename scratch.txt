@@ -1,0 +1,175 @@
+[
+{
+    "displayName": "Leggings of the Black Blizzard",
+    "slotType": "legs",
+    "properties": [
+        {
+            "statCode": "sta",
+            "amount": 14
+        },
+        {
+            "statCode": "int",
+            "amount": 16
+        },
+        {
+            "statCode": "spi",
+            "amount": 8
+        },
+        {
+            "statCode": "spc",
+            "amount": 1
+        },
+        {
+            "statCode": "sp",
+            "amount": 41
+        }
+    ]
+},
+
+{
+    "displayName": "Legionaire's Dreadweave Tunic",
+    "slotType": "chest",
+    "setId": "champion",
+    "properties": [
+        {
+            "statCode": "sta",
+            "amount": 20
+        },
+        {
+            "statCode": "int",
+            "amount": 20
+        },
+        {
+            "statCode": "sp",
+            "amount": 25
+        }
+    ]
+},
+{
+    "displayName": "Blood Guard's Dreadweave Handwraps",
+    "slotType": "chest",
+    "setId": "champion",
+    "properties": [
+        {
+            "statCode": "sta",
+            "amount": 14
+        },
+        {
+            "statCode": "int",
+            "amount": 4
+        },
+        {
+            "statCode": "sp",
+            "amount": 21
+        }
+    ]
+},
+{
+    "displayName": "Blood Guard's Dreadweave Walkers",
+    "slotType": "feet",
+    "setId": "champion",
+    "properties": [
+        {
+            "statCode": "sta",
+            "amount": 17
+        },
+        {
+            "statCode": "int",
+            "amount": 13
+        },
+        {
+            "statCode": "sp",
+            "amount": 18
+        }
+    ]
+},
+{
+    "displayName": "Champion's Dreadweave Cowl",
+    "slotType": "head",
+    "setId": "champion",
+    "properties": [
+        {
+            "statCode": "sta",
+            "amount": 21
+        },
+        {
+            "statCode": "int",
+            "amount": 18
+        },
+        {
+            "statCode": "sp",
+            "amount": 21
+        },
+        {
+            "statCode": "spc",
+            "amount": 1
+        }
+    ]
+},
+{
+    "displayName": "Champion's Dreadweave Spaulders",
+    "slotType": "shoulder",
+    "setId": "champion",
+    "properties": [
+        {
+            "statCode": "sta",
+            "amount": 17
+        },
+        {
+            "statCode": "int",
+            "amount": 13
+        },
+        {
+            "statCode": "sp",
+            "amount": 12
+        },
+        {
+            "statCode": "spc",
+            "amount": 1
+        }
+    ]
+},
+{
+    "displayName": "Legionaire's Dreadweave Legguards",
+    "slotType": "legs",
+    "setId": "champion",
+    "properties": [
+        {
+            "statCode": "sta",
+            "amount": 21
+        },
+        {
+            "statCode": "int",
+            "amount": 13
+        },
+        {
+            "statCode": "sp",
+            "amount": 28
+        }
+    ]
+}
+
+]
+
+{
+    "id": "champion",
+    "displayName": "Champion's Dreadgear",
+    "bonuses": [
+        {
+            "amount": 2,
+            "bonus":
+            {
+                "statCode": "sp",
+                "amount": 23
+            }
+        },
+        {
+            "amount": 6,
+            "bonus":
+            {
+                "statCode": "sta",
+                "amount": 20
+            }
+        }
+    ]
+},

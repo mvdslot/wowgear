@@ -681,6 +681,34 @@
                     "amount": 18
                 }
             ]
+        },
+        {
+            "displayName": "Mar'li's Touch",
+            "slotType": "ranged",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 5
+                },
+                {
+                    "statCode": "int",
+                    "amount": 11
+                },
+                {
+                    "statCode": "spi",
+                    "amount": 6
+                }
+            ]
+        },
+        {
+            "displayName": "Touch of Chaos",
+            "slotType": "ranged",
+            "properties": [
+                {
+                    "statCode": "sp",
+                    "amount": 18
+                }
+            ]
         }
     ],
     "sets": [

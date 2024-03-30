@@ -33,7 +33,7 @@ type SetBonus struct {
 	Value float64						`json:"value,omitempty"`
 }
 
-var highestValueFound float64
+var HighestValueFound float64
 
 var BestBuildFound *Build
 
@@ -146,8 +146,11 @@ func InitBuild() *Build {
 	}
 }
 
+var Combinations int
+
 func (b *Build) GetValue(sets []*Set) (float64, error) {
 	total := 0.0
+	Combinations++
 
 	for _, eq := range b.Equipments {
 		itemValue, err := b.getItemValue(eq.Item)
@@ -213,8 +216,8 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 			return
 		}
 
-		if value > highestValueFound {
-			highestValueFound = value
+		if value > HighestValueFound {
+			HighestValueFound = value
 			BestBuildFound = &Build{
 				Equipments: []Equipment{},
 			}
@@ -235,6 +238,7 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 	items := inv.GetItemsForSlotType(slotType)
 	if len(items) == 0 {
 		b.Evaluate(fromEquip+1, inv)
+		return
 	}
 
 	if shouldEvaluateAll(items) {
@@ -264,9 +268,9 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 			}
 		}
 		b.Equipments[fromEquip].Item = bestInslotItem
-		next := fromEquip+1
 
-		b.Evaluate(next, inv)
+		b.Evaluate(fromEquip+1, inv)
+		return
 	}
 }
 
