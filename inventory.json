@@ -66,6 +66,373 @@
                     "amount": 32
                 }
             ]
+        },
+        {
+            "displayName": "Nemesis Robes",
+            "slotType": "chest",
+            "setId": "nemesis",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 26
+                },
+                {
+                    "statCode": "int",
+                    "amount": 16
+                },
+                {
+                    "statCode": "spi",
+                    "amount": 8
+                },
+                {
+                    "statCode": "rf",
+                    "amount": 10
+                },
+                {
+                    "statCode": "rn",
+                    "amount": 10
+                },
+                {
+                    "statCode": "spc",
+                    "amount": 1
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 32
+                }
+            ]
+        },
+        {
+            "displayName": "Nemesis Bracers",
+            "slotType": "wrist",
+            "setId": "nemesis",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 21
+                },
+                {
+                    "statCode": "int",
+                    "amount": 11
+                },
+                {
+                    "statCode": "spi",
+                    "amount": 6
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 15
+                }
+            ]
+        },
+        {
+            "displayName": "Nemesis Boots",
+            "slotType": "feet",
+            "setId": "nemesis",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 20
+                },
+                {
+                    "statCode": "int",
+                    "amount": 17
+                },
+                {
+                    "statCode": "spi",
+                    "amount": 6
+                },
+                {
+                    "statCode": "rf",
+                    "amount": 10
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 23
+                }
+            ]
+        },
+        {
+            "displayName": "Nemesis Leggings",
+            "slotType": "legs",
+            "setId": "nemesis",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 23
+                },
+                {
+                    "statCode": "int",
+                    "amount": 16
+                },
+                {
+                    "statCode": "spi",
+                    "amount": 10
+                },
+                {
+                    "statCode": "ra",
+                    "amount": 10
+                },
+                {
+                    "statCode": "rf",
+                    "amount": 10
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 39
+                }
+            ]
+        },
+        {
+            "displayName": "Nemesis Gloves",
+            "slotType": "hands",
+            "setId": "nemesis",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 17
+                },
+                {
+                    "statCode": "int",
+                    "amount": 15
+                },
+                {
+                    "statCode": "rs",
+                    "amount": 10
+                },
+                {
+                    "statCode": "h5",
+                    "amount": 4
+                },
+                {
+                    "statCode": "spc",
+                    "amount": 1
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 15
+                }
+            ]
+        },
+        {
+            "displayName": "Nemesis Spaulders",
+            "slotType": "shoulder",
+            "setId": "nemesis",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 20
+                },
+                {
+                    "statCode": "int",
+                    "amount": 13
+                },
+                {
+                    "statCode": "spi",
+                    "amount": 6
+                },
+                {
+                    "statCode": "rf",
+                    "amount": 10
+                },
+                {
+                    "statCode": "h5",
+                    "amount": 4
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 23
+                }
+            ]
+        },
+        {
+            "displayName": "Boots of Epiphany",
+            "slotType": "feet",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 18
+                },
+                {
+                    "statCode": "int",
+                    "amount": 19
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 34
+                }
+            ]
+        },
+        {
+            "displayName": "Zandalar Demoniac's Wraps",
+            "slotType": "wrist",
+            "setId": "demoniac",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 15
+                },
+                {
+                    "statCode": "int",
+                    "amount": 8
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 16
+                }
+            ]
+        },
+        {
+            "displayName": "Zandalar Demoniac's Robe",
+            "slotType": "chest",
+            "setId": "demoniac",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 35
+                },
+                {
+                    "statCode": "sph",
+                    "amount": 1
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 27
+                }
+            ]
+        },
+        {
+            "displayName": "Zandalar Demoniac's Mantle",
+            "slotType": "shoulder",
+            "setId": "demoniac",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 23
+                },
+                {
+                    "statCode": "int",
+                    "amount": 19
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 12
+                }
+            ]
+        },
+        {
+            "displayName": "General's Dreadweave Boots",
+            "slotType": "feet",
+            "setId": "warlord",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 22
+                },
+                {
+                    "statCode": "int",
+                    "amount": 13
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 26
+                }
+            ]
+        },
+        {
+            "displayName": "General's Dreadweave Gloves",
+            "slotType": "hands",
+            "setId": "warlord",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 20
+                },
+                {
+                    "statCode": "int",
+                    "amount": 6
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 30
+                }
+            ]
+        },
+        {
+            "displayName": "General's Dreadweave Pants",
+            "slotType": "legs",
+            "setId": "warlord",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 28
+                },
+                {
+                    "statCode": "int",
+                    "amount": 19
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 37
+                }
+            ]
+        },
+        {
+            "displayName": "Warlord's Dreadweave Hood",
+            "slotType": "head",
+            "setId": "warlord",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 30
+                },
+                {
+                    "statCode": "int",
+                    "amount": 24
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 32
+                }
+            ]
+        },
+        {
+            "displayName": "Warlord's Dreadweave Mantle",
+            "slotType": "shoulder",
+            "setId": "warlord",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 24
+                },
+                {
+                    "statCode": "int",
+                    "amount": 17
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 25
+                }
+            ]
+        },
+        {
+            "displayName": "Warlord's Dreadweave Robe",
+            "slotType": "chest",
+            "setId": "warlord",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 30
+                },
+                {
+                    "statCode": "int",
+                    "amount": 24
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 32
+                }
+            ]
         }
     ],
     "sets": [
@@ -79,6 +446,42 @@
                     {
                         "statCode": "sp",
                         "amount": 23
+                    }
+                }
+            ]
+        },
+        {
+            "id": "warlord",
+            "displayName": "Warlord's Threads",
+            "bonuses": [
+                {
+                    "amount": 2,
+                    "bonus":
+                    {
+                        "statCode": "sta",
+                        "amount": 20
+                    }
+                },
+                {
+                    "amount": 6,
+                    "bonus":
+                    {
+                        "statCode": "sp",
+                        "amount": 23
+                    }
+                }
+            ]
+        },
+        {
+            "id": "demoniac",
+            "displayName": "Demoniac's Threads",
+            "bonuses": [
+                {
+                    "amount": 2,
+                    "bonus":
+                    {
+                        "statCode": "sp",
+                        "amount": 12
                     }
                 }
             ]

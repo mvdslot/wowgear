@@ -3,7 +3,7 @@
         {
             "code": "sta",
             "displayName": "Stamina",
-            "value": 1.2
+            "value": 1.3
         },
         {
             "code": "int",
@@ -56,13 +56,23 @@
             "value": 0.2
         },
         {
+            "code": "rn",
+            "displayName": "Nature Resistance",
+            "value": 0.2
+        },
+        {
             "code": "rf",
             "displayName": "Fire Resistance",
-            "value": 0.2
+            "value": 0.25
         },
         {
             "code": "rfr",
             "displayName": "Frost Resistance",
+            "value": 0.2
+        },
+        {
+            "code": "ra",
+            "displayName": "Arcane Resistance",
             "value": 0.2
         },
         {

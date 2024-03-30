@@ -53,7 +53,7 @@ func InitBuild() *Build {
 			{
 				Slot: &Slot{
 					Type:        "shoulder",
-					DisplayName: "Shoulders",
+					DisplayName: "Shoulder",
 				},
 			},
 			{
@@ -70,19 +70,19 @@ func InitBuild() *Build {
 			},
 			{
 				Slot: &Slot{
-					Type:        "bracer",
-					DisplayName: "Bracers",
+					Type:        "wrist",
+					DisplayName: "Wrist",
 				},
 			},
 			{
 				Slot: &Slot{
-					Type:        "weapon_main",
+					Type:        "weapon",
 					DisplayName: "Main Hand Weapon",
 				},
 			},
 			{
 				Slot: &Slot{
-					Type:        "weapon_off",
+					Type:        "weapon",
 					DisplayName: "Off Hand Weapon",
 				},
 			},
@@ -94,7 +94,7 @@ func InitBuild() *Build {
 			},
 			{
 				Slot: &Slot{
-					Type:        "hand",
+					Type:        "hands",
 					DisplayName: "Hands",
 				},
 			},
@@ -106,14 +106,14 @@ func InitBuild() *Build {
 			},
 			{
 				Slot: &Slot{
-					Type:        "leg",
+					Type:        "legs",
 					DisplayName: "Legs",
 				},
 			},
 			{
 				Slot: &Slot{
-					Type:        "boot",
-					DisplayName: "Boots",
+					Type:        "feet",
+					DisplayName: "Feet",
 				},
 			},
 			{
@@ -154,7 +154,6 @@ func (b *Build) GetValue(sets []*Set) (float64, error) {
 		}
 		total += itemValue
 	}
-	// TODO: Add set bonuses
 	for _, set := range sets {
 		itemsInSet := b.countItemsInSet(set.Id)
 		for _, setBonus := range set.Bonuses {
@@ -233,6 +232,8 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 		for _, item := range items {
 			b.Equipments[fromEquip].Item = item
 			next := fromEquip+1
+
+			// TODO: Main hand / off hand
 			if item.IsTwoHand{
 				next++
 			}

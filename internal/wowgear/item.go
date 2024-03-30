@@ -10,6 +10,7 @@ type Item struct {
 	Properties []Property		`json:"properties,omitempty"`
 	SlotType string				`json:"slotType,omitempty"`
 	IsTwoHand bool				`json:"isTwoHand,omitempty"`
-	IsAnyHand bool				`json:"isAnyHand,omitempty"`
+	IsMainHand bool				`json:"isMainHand,omitempty"`
+	IsOffHand bool				`json:"isOffHand,omitempty"`
 	SetId string				`json:"setId,omitempty"`
 }
