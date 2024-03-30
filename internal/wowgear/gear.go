@@ -18,6 +18,7 @@ type Equipment struct {
 type Build struct {
 	Equipments []Equipment
 	StatList   *StatList
+	SetBonuses []*SetBonus
 }
 
 type Set struct {
@@ -29,6 +30,7 @@ type Set struct {
 type SetBonus struct {
 	Amount int							`json:"amount,omitempty"`
 	Bonus  Property						`json:"bonus,omitempty"`
+	Value float64						`json:"value,omitempty"`
 }
 
 var highestValueFound float64
@@ -154,6 +156,7 @@ func (b *Build) GetValue(sets []*Set) (float64, error) {
 		}
 		total += itemValue
 	}
+	b.SetBonuses = []*SetBonus{}
 	for _, set := range sets {
 		itemsInSet := b.countItemsInSet(set.Id)
 		for _, setBonus := range set.Bonuses {
@@ -162,7 +165,10 @@ func (b *Build) GetValue(sets []*Set) (float64, error) {
 				if err != nil {
 					return 0, err
 				}
-				total += float64(setBonus.Bonus.Amount) * value
+				bonusValue := float64(setBonus.Bonus.Amount) * value
+				setBonus.Value = bonusValue
+				total += bonusValue
+				b.SetBonuses = append(b.SetBonuses, &setBonus)
 			}
 		}
 	}
@@ -182,19 +188,21 @@ func (b *Build) countItemsInSet(setId string) int {
 }
 
 func (b *Build) getItemValue(item *Item) (float64, error) {
-	total := 0.0
 	if item == nil {
-		return total, nil
+		return 0.0, nil
+	}
+	if item.Value > 0 {
+		// Already calculated
+		return item.Value, nil
 	}
 	for _, p := range item.Properties {
 		val, err := getStatValue(p.StatCode, b.StatList)
 		if err != nil {
 			return 0, err
 		}
-
-		total += float64(p.Amount) * val
+		item.Value += float64(p.Amount) * val
 	}
-	return total, nil
+	return item.Value, nil
 }
 
 func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
@@ -215,8 +223,9 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 				BestBuildFound.Equipments = append(BestBuildFound.Equipments, Equipment{
 					Slot: eq.Slot,
 					Item: eq.Item,
-				} )
+				})
 			}
+			BestBuildFound.SetBonuses = b.SetBonuses
 		}
 		return
 	}

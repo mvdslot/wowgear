@@ -45,9 +45,13 @@ func main() {
 
 	for _, eq := range wowgear.BestBuildFound.Equipments {
 		if eq.Item != nil {
-			fmt.Printf("%s: %s\n", eq.Slot.DisplayName, eq.Item.DisplayName)
+			fmt.Printf("%s: %s (worth %f)\n", eq.Slot.DisplayName, eq.Item.DisplayName, eq.Item.Value)
 		}
 	}
+	for _, b := range wowgear.BestBuildFound.SetBonuses {
+		fmt.Printf("%s: %d (worth %f)\n", b.Bonus.StatCode, b.Bonus.Amount, b.Value)
+	}
+
 }
 
 

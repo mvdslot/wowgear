@@ -13,4 +13,5 @@ type Item struct {
 	IsMainHand bool				`json:"isMainHand,omitempty"`
 	IsOffHand bool				`json:"isOffHand,omitempty"`
 	SetId string				`json:"setId,omitempty"`
+	Value float64				`json:"value,omitempty"`
 }
