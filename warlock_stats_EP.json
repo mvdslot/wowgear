@@ -3,17 +3,17 @@
         {
             "code": "sta",
             "displayName": "Stamina",
-            "value": 1.3
+            "value": 0.0
         },
         {
             "code": "int",
             "displayName": "Intellect",
-            "value": 1.0
+            "value": 0.28
         },
         {
             "code": "spi",
             "displayName": "Spirit",
-            "value": 0.33
+            "value": 0.0
         },
         {
             "code": "agi",
@@ -28,67 +28,67 @@
         {
             "code": "sp",
             "displayName": "Spellpower",
-            "value": 2.0
+            "value": 1.0
         },
         {
             "code": "sps",
             "displayName": "Spellpower (Shadow)",
-            "value": 1.75
+            "value": 1.0
         },
         {
             "code": "spf",
             "displayName": "Spellpower (Fire)",
-            "value": 0.25
+            "value": 0.0
         },
         {
             "code": "sph",
             "displayName": "Spell Hit Chance",
-            "value": 39.0
+            "value": 19.53
         },
         {
             "code": "spc",
             "displayName": "Spell Crit Chance",
-            "value": 25.0
+            "value": 12.64
         },
         {
             "code": "spp",
             "displayName": "Spell Penetration",
-            "value": 1.0
+            "value": 0.0
         },
         {
             "code": "rs",
             "displayName": "Shadow Resistance",
-            "value": 0.2
+            "value": 0.0
         },
         {
             "code": "rn",
             "displayName": "Nature Resistance",
-            "value": 0.2
+            "value": 0.0
         },
         {
             "code": "rf",
             "displayName": "Fire Resistance",
-            "value": 0.25
+            "value": 0.0
         },
         {
             "code": "rfr",
             "displayName": "Frost Resistance",
-            "value": 0.2
+            "value": 0.0
         },
         {
             "code": "ra",
             "displayName": "Arcane Resistance",
-            "value": 0.2
+            "value": 0.0
         },
         {
             "code": "h5",
             "displayName": "Health per 5 sec",
-            "value": 1.0
+            "value": 0.0
         },
         {
             "code": "m5",
             "displayName": "Mana per 5 sec",
-            "value": 0.9
+            "value": 0.0
         }
     ]
 }

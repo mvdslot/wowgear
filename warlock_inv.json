@@ -522,6 +522,24 @@
             ]
         },
         {
+            "displayName": "Bloodvine Goggles",
+            "slotType": "head",
+            "properties": [
+                {
+                    "statCode": "m5",
+                    "amount": 9
+                },
+                {
+                    "statCode": "sph",
+                    "amount": 2
+                },
+                {
+                    "statCode": "spc",
+                    "amount": 1
+                }
+            ]
+        },
+        {
             "displayName": "Shackles of the Unscarred",
             "slotType": "wrist",
             "properties": [

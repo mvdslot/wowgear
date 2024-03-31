@@ -65,12 +65,12 @@ func main() {
 	}
 	fmt.Print("\nBonuses:\n")
 	for _, b := range wowgear.BestBuildFound.SetBonuses {
-		fmt.Printf("%s: %d (worth %f)\n", b.Bonus.StatCode, b.Bonus.Amount, b.Value)
+		fmt.Printf("%s: %f (worth %f)\n", b.Bonus.StatCode, b.Bonus.Amount, b.Value)
 	}
-	// fmt.Print("\n")
-	// for _, i := range inv.Items {
-	// 	fmt.Printf("%s is worth %f\n", i.DisplayName, i.Value)
-	// }
+	fmt.Print("\n")
+	for _, i := range inv.Items {
+		fmt.Printf("%s is worth %f\n", i.DisplayName, i.Value)
+	}
 }
 
 

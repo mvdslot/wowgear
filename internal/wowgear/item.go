@@ -2,7 +2,7 @@ package wowgear
 
 type Property struct {
 	StatCode string				`json:"statCode,omitempty"`
-	Amount int					`json:"amount,omitempty"`
+	Amount float64				`json:"amount,omitempty"`
 }
 
 type Item struct {
