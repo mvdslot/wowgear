@@ -709,6 +709,68 @@
                     "amount": 18
                 }
             ]
+        },
+        {
+            "displayName": "Band of Dark Dominion",
+            "slotType": "finger",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 12
+                },
+                {
+                    "statCode": "int",
+                    "amount": 6
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 33
+                }
+            ]
+        },
+        {
+            "displayName": "Signet Ring of the Bronze Dragonflight",
+            "slotType": "finger",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 8
+                },
+                {
+                    "statCode": "int",
+                    "amount": 8
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 26
+                },
+                {
+                    "statCode": "m5",
+                    "amount": 4
+                }
+            ]
+        },
+        {
+            "displayName": "Ring of Unspoken Names",
+            "slotType": "finger",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 12
+                },
+                {
+                    "statCode": "sp",
+                    "amount": 14
+                },
+                {
+                    "statCode": "sph",
+                    "amount": 1
+                },
+                {
+                    "statCode": "spc",
+                    "amount": 1
+                }
+            ]
         }
     ],
     "sets": [

@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"flag"
 	"fmt"
 	"log/slog"
 	"os"
@@ -13,30 +14,39 @@ func main() {
 
 	inv := &wowgear.Inventory{}
 
-	data, err := os.ReadFile("./inventory.json")
+	invFile := flag.String("inv", "", "json file containing inventory")
+	statsFile := flag.String("stats", "", "json file containing stats and their weights")
+
+	flag.Parse()
+
+	data, err := os.ReadFile(*invFile)
 	
 	if err != nil {
-		slog.Error("unable to read inventory.json", "error", err.Error())
+		slog.Error("unable to read", "file", *invFile, "error", err.Error())
+		os.Exit(1)
 	}
 
 	err = json.Unmarshal(data, &inv)
 
 	if err != nil {
 		slog.Error("unable to unmarshal json", "error", err.Error())
+		os.Exit(1)
 	}
 
 	stats := &wowgear.StatList{}
 
-	data, err = os.ReadFile("./warlock.json")
+	data, err = os.ReadFile(*statsFile)
 	
 	if err != nil {
-		slog.Error("unable to read warlock.json", "error", err.Error())
+		slog.Error("unable to read", "file", *statsFile, "error", err.Error())
+		os.Exit(1)
 	}
 
 	err = json.Unmarshal(data, &stats)
 
 	if err != nil {
 		slog.Error("unable to unmarshal json", "error", err.Error())
+		os.Exit(1)
 	}
 
 	build := wowgear.InitBuild()
@@ -53,15 +63,14 @@ func main() {
 			fmt.Printf("%s: %s (worth %f)\n", eq.Slot.DisplayName, eq.Item.DisplayName, eq.Item.Value)
 		}
 	}
-	fmt.Print("\n")
+	fmt.Print("\nBonuses:\n")
 	for _, b := range wowgear.BestBuildFound.SetBonuses {
 		fmt.Printf("%s: %d (worth %f)\n", b.Bonus.StatCode, b.Bonus.Amount, b.Value)
 	}
-	fmt.Print("\n")
-	for _, i := range inv.Items {
-		fmt.Printf("%s is worth %f\n", i.DisplayName, i.Value)
-	}
-
+	// fmt.Print("\n")
+	// for _, i := range inv.Items {
+	// 	fmt.Printf("%s is worth %f\n", i.DisplayName, i.Value)
+	// }
 }
 
 

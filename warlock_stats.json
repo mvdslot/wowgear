@@ -48,7 +48,7 @@
         {
             "code": "spc",
             "displayName": "Spell Crit Chance",
-            "value": 28.0
+            "value": 25.0
         },
         {
             "code": "spp",
@@ -83,7 +83,12 @@
         {
             "code": "h5",
             "displayName": "Health per 5 sec",
-            "value": 0.2
+            "value": 1.0
+        },
+        {
+            "code": "m5",
+            "displayName": "Mana per 5 sec",
+            "value": 0.9
         }
     ]
 }

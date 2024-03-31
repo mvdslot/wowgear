@@ -22,15 +22,15 @@ type Build struct {
 }
 
 type Set struct {
-	Id          string					`json:"id,omitempty"`
-	DisplayName string					`json:"displayName,omitempty"`
-	Bonuses		[]SetBonus				`json:"bonuses,omitempty"`
+	Id          string     `json:"id,omitempty"`
+	DisplayName string     `json:"displayName,omitempty"`
+	Bonuses     []SetBonus `json:"bonuses,omitempty"`
 }
 
 type SetBonus struct {
-	Amount int							`json:"amount,omitempty"`
-	Bonus  Property						`json:"bonus,omitempty"`
-	Value float64						`json:"value,omitempty"`
+	Amount int      `json:"amount,omitempty"`
+	Bonus  Property `json:"bonus,omitempty"`
+	Value  float64  `json:"value,omitempty"`
 }
 
 var HighestValueFound float64
@@ -120,14 +120,14 @@ func InitBuild() *Build {
 			},
 			{
 				Slot: &Slot{
-					Type:        "ring",
-					DisplayName: "Ring 1",
+					Type:        "finger",
+					DisplayName: "Finger 1",
 				},
 			},
 			{
 				Slot: &Slot{
-					Type:        "ring",
-					DisplayName: "Ring 2",
+					Type:        "finger",
+					DisplayName: "Finger 2",
 				},
 			},
 			{
@@ -209,6 +209,11 @@ func (b *Build) getItemValue(item *Item) (float64, error) {
 }
 
 func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
+	var previous *Item
+	if fromEquip > 0 {
+		previous = b.Equipments[fromEquip - 1].Item
+	}
+
 	if fromEquip == len(b.Equipments) {
 		value, err := b.GetValue(inv.Sets)
 		if err != nil {
@@ -222,7 +227,7 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 				Equipments: []Equipment{},
 			}
 
-			for _, eq := range b.Equipments{
+			for _, eq := range b.Equipments {
 				BestBuildFound.Equipments = append(BestBuildFound.Equipments, Equipment{
 					Slot: eq.Slot,
 					Item: eq.Item,
@@ -235,7 +240,7 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 
 	slotType := b.Equipments[fromEquip].Slot.Type
 
-	items := inv.GetItemsForSlotType(slotType)
+	items := inv.getItemsForSlotType(slotType, previous)
 	if len(items) == 0 {
 		b.Evaluate(fromEquip+1, inv)
 		return
@@ -244,10 +249,9 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 	if shouldEvaluateAll(items) {
 		for _, item := range items {
 			b.Equipments[fromEquip].Item = item
-			next := fromEquip+1
+			next := fromEquip + 1
 
-			// TODO: Main hand / off hand
-			if item.IsTwoHand{
+			if item.IsTwoHand {
 				next++
 			}
 
@@ -255,7 +259,7 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 		}
 	} else {
 		var bestInSlotValue float64
-		var bestInslotItem *Item
+		var bestInSlotItem *Item
 		for _, item := range items {
 			itemValue, err := b.getItemValue(item)
 			if err != nil {
@@ -264,10 +268,10 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 			}
 			if itemValue > bestInSlotValue {
 				bestInSlotValue = itemValue
-				bestInslotItem = item
+				bestInSlotItem = item
 			}
 		}
-		b.Equipments[fromEquip].Item = bestInslotItem
+		b.Equipments[fromEquip].Item = bestInSlotItem
 
 		b.Evaluate(fromEquip+1, inv)
 		return
