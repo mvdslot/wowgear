@@ -102,6 +102,23 @@ func main() {
 	for _, b := range wowgear.BestBuildFound.SetBonuses {
 		fmt.Printf("%s: %f (worth %f)\n", b.Bonus.StatCode, b.Bonus.Amount, b.Value)
 	}
+	fmt.Println("\nStats:")
+	for _, s := range stats.Stats {
+		if s.Value > 0 {
+			total := 0.0
+			for _, eq := range wowgear.BestBuildFound.Equipments {
+				if eq.Item != nil {
+					for _, p := range eq.Item.Properties {
+						if p.StatCode == s.Code {
+							total += p.Amount
+						}
+					}
+				}
+			}
+			fmt.Printf("Total %s: %f\n", s.DisplayName, total)
+		}
+	}
+
 	if wowgear.Debug {
 		fmt.Print("\n")
 		for _, i := range inv.Items {
