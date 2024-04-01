@@ -93,6 +93,7 @@ func main() {
 
 	fmt.Printf("Evaluated %d combinations in %d ms, highest value found is %f\n", wowgear.Combinations, time.Since(start).Milliseconds(), wowgear.HighestValueFound)
 
+	fmt.Println("\nEquipments:")
 	for _, eq := range wowgear.BestBuildFound.Equipments {
 		if eq.Item != nil {
 			fmt.Printf("%s: %s (worth %f)\n", eq.Slot.DisplayName, eq.Item.DisplayName, eq.Item.Value)
