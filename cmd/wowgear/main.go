@@ -15,7 +15,6 @@ import (
 
 func main() {
 
-	inv := &wowgear.Inventory{}
 	invFile := flag.String("inv", "", "yaml file containing inventory")
 	statsFile := flag.String("stats", "", "yaml file containing stats and their weights")
 	hitCap := flag.String("hitcap", "", "optional hitcap override")
@@ -24,6 +23,11 @@ func main() {
 
 	flag.Parse()
 
+	if *invFile == "" || *statsFile == "" {
+		slog.Error("-inv and -stats must be provided, e.g. wowgear  -inv=warlock_inv.yaml -stats=warlock_stats.yaml")
+		os.Exit(1)
+	}
+
 	data, err := os.ReadFile(*invFile)
 
 	if err != nil {
@@ -31,14 +35,13 @@ func main() {
 		os.Exit(1)
 	}
 
+	inv := &wowgear.Inventory{}
 	err = yaml.Unmarshal(data, &inv)
 
 	if err != nil {
 		slog.Error("unable to unmarshal yaml", "error", err.Error())
 		os.Exit(1)
 	}
-
-	stats := &wowgear.StatList{}
 
 	data, err = os.ReadFile(*statsFile)
 
@@ -47,6 +50,7 @@ func main() {
 		os.Exit(1)
 	}
 
+	stats := &wowgear.StatList{}
 	err = yaml.Unmarshal(data, &stats)
 
 	if err != nil {
@@ -101,7 +105,11 @@ func main() {
 	}
 	fmt.Println("\nSet bonuses:")
 	for _, b := range wowgear.BestBuildFound.SetBonuses {
-		fmt.Printf("%s: %f (worth %f)\n", b.Bonus.StatCode, b.Bonus.Amount, b.Value)
+		stat, err := stats.GetStat(b.Bonus.StatCode)
+		if err != nil {
+			slog.Error("error getting stat", "stat", b.Bonus.StatCode, "error", err.Error())
+		}
+		fmt.Printf("%s: %f (worth %f)\n", stat.DisplayName, b.Bonus.Amount, b.Value)
 	}
 	fmt.Println("\nStats:")
 	for _, s := range stats.Stats {

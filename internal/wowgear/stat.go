@@ -13,11 +13,11 @@ type StatList struct {
 	HitCap int     `yaml:"hitCap,omitempty"`
 }
 
-func getStatValue(statCode string, statList *StatList) (float64, error) {
-	for _, stat := range statList.Stats {
+func (sl *StatList) GetStat(statCode string) (*Stat, error) {
+	for _, stat := range sl.Stats {
 		if stat.Code == statCode {
-			return stat.Value, nil
+			return stat, nil
 		}
 	}
-	return 0, errors.New("unknown stat code " + statCode)
+	return nil, errors.New("unknown stat code " + statCode)
 }

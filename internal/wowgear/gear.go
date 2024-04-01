@@ -170,20 +170,19 @@ func (b *Build) GetValue(sets []*Set) (float64, error) {
 		itemsInSet := b.countItemsInSet(set.Id)
 		for _, setBonus := range set.Bonuses {
 			if itemsInSet >= setBonus.Amount {
-				value, err := getStatValue(setBonus.Bonus.StatCode, b.StatList)
+				stat, err := b.StatList.GetStat(setBonus.Bonus.StatCode)
 				if err != nil {
 					return 0, err
 				}
-				bonusValue := float64(setBonus.Bonus.Amount) * value
-				setBonus.Value = bonusValue
-				total += bonusValue
+				setBonus.Value = float64(setBonus.Bonus.Amount) * stat.Value
+				total += setBonus.Value
 				b.SetBonuses = append(b.SetBonuses, &setBonus)
 			}
 		}
 	}
 
 	// Correct for hitcap
-	hitValue, err := getStatValue("hit", b.StatList)
+	hitStat, err := b.StatList.GetStat("hit")
 	if err != nil {
 		slog.Error("error getting hit value", "error", err.Error())
 		os.Exit(1)
@@ -192,7 +191,7 @@ func (b *Build) GetValue(sets []*Set) (float64, error) {
 	hit := b.getTotalHit()
 
 	if hit > float64(b.StatList.HitCap) {
-		total -= (hit - float64(b.StatList.HitCap)) * hitValue
+		total -= (hit - float64(b.StatList.HitCap)) * hitStat.Value
 	}
 
 	return total, nil
@@ -245,11 +244,11 @@ func (b *Build) getItemValue(item *Item) (float64, error) {
 		return item.Value, nil
 	}
 	for _, p := range item.Properties {
-		val, err := getStatValue(p.StatCode, b.StatList)
+		stat, err := b.StatList.GetStat(p.StatCode)
 		if err != nil {
 			return 0, err
 		}
-		item.Value += float64(p.Amount) * val
+		item.Value += float64(p.Amount) * stat.Value
 	}
 	return item.Value, nil
 }
@@ -292,18 +291,60 @@ func (b *Build) Evaluate(slotNumber int, inv *Inventory) {
 		return
 	}
 
-	for _, item := range items {
-		b.Equipments[slotNumber].Item = item
-		// Forward one slot
-		next := slotNumber + 1
+	bis := b.findBestInSlotItem(items)
 
-		if item.IsTwoHand {
-			// Unequip off hand if main hand has 2H
-			b.Equipments[next].Item = nil
-			// And forward one extra slot
-			next++
+	if bis == nil {
+		for _, item := range items {
+			b.Equipments[slotNumber].Item = item
+			// Forward one slot
+			next := slotNumber + 1
+
+			if item.IsTwoHand {
+				// Unequip off hand if main hand has 2H
+				b.Equipments[next].Item = nil
+				// And forward one extra slot
+				next++
+			}
+
+			b.Evaluate(next, inv)
 		}
+	} else {
+		// Just equip BIS
+		b.Equipments[slotNumber].Item = bis
 
-		b.Evaluate(next, inv)
+		b.Evaluate(slotNumber+1, inv)
+		return
 	}
+}
+
+func (b *Build) findBestInSlotItem(items []*Item) *Item {
+	var bestInSlotValue float64
+	var bestInSlotItem *Item
+	// If the list of items contains an item that is in a set,
+	// or has hit (which might be capped) or is a weapon (we might be stuck with only a main hand weapon left for the off hand)
+	// we need to evaluate further, otherwise we can safely just equip the best in slot item
+	for _, item := range items {
+		if item.SetId != "" || item.SlotType == "weapon" || hasHit(item) {
+			return nil
+		}
+		itemValue, err := b.getItemValue(item)
+		if err != nil {
+			slog.Error(err.Error())
+			os.Exit(1)
+		}
+		if itemValue > bestInSlotValue {
+			bestInSlotValue = itemValue
+			bestInSlotItem = item
+		}
+	}
+	return bestInSlotItem
+}
+
+func hasHit(item *Item) bool {
+	for _, p := range item.Properties {
+		if p.StatCode == "hit" {
+			return true
+		}
+	}
+	return false
 }
