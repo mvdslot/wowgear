@@ -3,15 +3,15 @@ package wowgear
 import "errors"
 
 type Stat struct {
-	Code        string		`json:"code,omitempty"`
-	DisplayName string		`json:"displayName,omitempty"`
-	Value       float64		`json:"value,omitempty"`
+	Code        string  `yaml:"code,omitempty"`
+	DisplayName string  `yaml:"displayName,omitempty"`
+	Value       float64 `yaml:"value,omitempty"`
 }
 
-type StatList struct{
-	Stats []*Stat 			`json:"stats,omitempty"`
-	HitCap int				`json:"hitCap,omitempty"`
-} 
+type StatList struct {
+	Stats  []*Stat `yaml:"stats,omitempty"`
+	HitCap int     `yaml:"hitCap,omitempty"`
+}
 
 func getStatValue(statCode string, statList *StatList) (float64, error) {
 	for _, stat := range statList.Stats {

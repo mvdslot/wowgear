@@ -1,0 +1,441 @@
+---
+items:
+- displayName: Nemesis Belt
+  slotType: waist
+  setId: nemesis
+  properties:
+  - statCode: sta
+    amount: 18
+  - statCode: int
+    amount: 8
+  - statCode: spi
+    amount: 6
+  - statCode: rs
+    amount: 10
+  - statCode: sp
+    amount: 25
+  - statCode: crit
+    amount: 1
+- displayName: Nemesis Skullcap
+  slotType: head
+  setId: nemesis
+  properties:
+  - statCode: sta
+    amount: 26
+  - statCode: int
+    amount: 16
+  - statCode: spi
+    amount: 6
+  - statCode: rs
+    amount: 10
+  - statCode: rfr
+    amount: 10
+  - statCode: h5
+    amount: 4
+  - statCode: sp
+    amount: 32
+- displayName: Nemesis Robes
+  slotType: chest
+  setId: nemesis
+  properties:
+  - statCode: sta
+    amount: 26
+  - statCode: int
+    amount: 16
+  - statCode: spi
+    amount: 8
+  - statCode: rf
+    amount: 10
+  - statCode: rn
+    amount: 10
+  - statCode: crit
+    amount: 1
+  - statCode: sp
+    amount: 32
+- displayName: Nemesis Bracers
+  slotType: wrist
+  setId: nemesis
+  properties:
+  - statCode: sta
+    amount: 21
+  - statCode: int
+    amount: 11
+  - statCode: spi
+    amount: 6
+  - statCode: sp
+    amount: 15
+- displayName: Nemesis Boots
+  slotType: feet
+  setId: nemesis
+  properties:
+  - statCode: sta
+    amount: 20
+  - statCode: int
+    amount: 17
+  - statCode: spi
+    amount: 6
+  - statCode: rf
+    amount: 10
+  - statCode: sp
+    amount: 23
+- displayName: Nemesis Leggings
+  slotType: legs
+  setId: nemesis
+  properties:
+  - statCode: sta
+    amount: 23
+  - statCode: int
+    amount: 16
+  - statCode: spi
+    amount: 10
+  - statCode: ra
+    amount: 10
+  - statCode: rf
+    amount: 10
+  - statCode: sp
+    amount: 39
+- displayName: Nemesis Gloves
+  slotType: hands
+  setId: nemesis
+  properties:
+  - statCode: sta
+    amount: 17
+  - statCode: int
+    amount: 15
+  - statCode: rs
+    amount: 10
+  - statCode: h5
+    amount: 4
+  - statCode: crit
+    amount: 1
+  - statCode: sp
+    amount: 15
+- displayName: Nemesis Spaulders
+  slotType: shoulder
+  setId: nemesis
+  properties:
+  - statCode: sta
+    amount: 20
+  - statCode: int
+    amount: 13
+  - statCode: spi
+    amount: 6
+  - statCode: rf
+    amount: 10
+  - statCode: h5
+    amount: 4
+  - statCode: sp
+    amount: 23
+- displayName: Boots of Epiphany
+  slotType: feet
+  properties:
+  - statCode: sta
+    amount: 18
+  - statCode: int
+    amount: 19
+  - statCode: sp
+    amount: 34
+- displayName: Zandalar Demoniac's Wraps
+  slotType: wrist
+  setId: demoniac
+  properties:
+  - statCode: sta
+    amount: 15
+  - statCode: int
+    amount: 8
+  - statCode: sp
+    amount: 16
+- displayName: Zandalar Demoniac's Robe
+  slotType: chest
+  setId: demoniac
+  properties:
+  - statCode: sta
+    amount: 35
+  - statCode: hit
+    amount: 1
+  - statCode: sp
+    amount: 27
+- displayName: Zandalar Demoniac's Mantle
+  slotType: shoulder
+  setId: demoniac
+  properties:
+  - statCode: sta
+    amount: 23
+  - statCode: int
+    amount: 19
+  - statCode: sp
+    amount: 12
+- displayName: General's Dreadweave Boots
+  slotType: feet
+  setId: warlord
+  properties:
+  - statCode: sta
+    amount: 22
+  - statCode: int
+    amount: 13
+  - statCode: sp
+    amount: 26
+- displayName: General's Dreadweave Gloves
+  slotType: hands
+  setId: warlord
+  properties:
+  - statCode: sta
+    amount: 20
+  - statCode: int
+    amount: 6
+  - statCode: sp
+    amount: 30
+- displayName: General's Dreadweave Pants
+  slotType: legs
+  setId: warlord
+  properties:
+  - statCode: sta
+    amount: 28
+  - statCode: int
+    amount: 19
+  - statCode: sp
+    amount: 37
+- displayName: Warlord's Dreadweave Hood
+  slotType: head
+  setId: warlord
+  properties:
+  - statCode: sta
+    amount: 30
+  - statCode: int
+    amount: 24
+  - statCode: sp
+    amount: 32
+- displayName: Warlord's Dreadweave Mantle
+  slotType: shoulder
+  setId: warlord
+  properties:
+  - statCode: sta
+    amount: 24
+  - statCode: int
+    amount: 17
+  - statCode: sp
+    amount: 25
+- displayName: Warlord's Dreadweave Robe
+  slotType: chest
+  setId: warlord
+  properties:
+  - statCode: sta
+    amount: 30
+  - statCode: int
+    amount: 24
+  - statCode: sp
+    amount: 32
+- displayName: Doomcaller's Mantle
+  slotType: shoulder
+  properties:
+  - statCode: sta
+    amount: 20
+  - statCode: int
+    amount: 11
+  - statCode: spi
+    amount: 4
+  - statCode: sp
+    amount: 28
+  - statCode: spp
+    amount: 10
+  - statCode: hit
+    amount: 1
+- displayName: Bloodvine Vest
+  slotType: chest
+  setId: bloodvine
+  properties:
+  - statCode: int
+    amount: 13
+  - statCode: hit
+    amount: 2
+  - statCode: sp
+    amount: 27
+- displayName: Bloodvine Leggings
+  slotType: legs
+  setId: bloodvine
+  properties:
+  - statCode: int
+    amount: 6
+  - statCode: hit
+    amount: 1
+  - statCode: sp
+    amount: 37
+- displayName: Bloodvine Boots
+  slotType: feet
+  setId: bloodvine
+  properties:
+  - statCode: int
+    amount: 16
+  - statCode: hit
+    amount: 1
+  - statCode: sp
+    amount: 19
+- displayName: Bloodvine Goggles
+  slotType: head
+  properties:
+  - statCode: m5
+    amount: 9
+  - statCode: hit
+    amount: 2
+  - statCode: crit
+    amount: 1
+- displayName: Shackles of the Unscarred
+  slotType: wrist
+  properties:
+  - statCode: sta
+    amount: 9
+  - statCode: int
+    amount: 12
+  - statCode: spp
+    amount: 10
+  - statCode: sp
+    amount: 21
+- displayName: Staff of the Shadow Flame
+  slotType: weapon
+  isTwoHand: true
+  properties:
+  - statCode: sta
+    amount: 24
+  - statCode: int
+    amount: 29
+  - statCode: spi
+    amount: 18
+  - statCode: crit
+    amount: 2
+  - statCode: sp
+    amount: 84
+- displayName: Staff of the Ruins
+  slotType: weapon
+  isTwoHand: true
+  properties:
+  - statCode: sta
+    amount: 24
+  - statCode: int
+    amount: 23
+  - statCode: spi
+    amount: 14
+  - statCode: crit
+    amount: 1
+  - statCode: hit
+    amount: 1
+  - statCode: sp
+    amount: 60
+- displayName: Blessed Qiraji Acolyte Staff
+  slotType: weapon
+  isTwoHand: true
+  properties:
+  - statCode: sta
+    amount: 32
+  - statCode: int
+    amount: 33
+  - statCode: crit
+    amount: 1
+  - statCode: hit
+    amount: 2
+  - statCode: sp
+    amount: 76
+- displayName: Cloak of Consumption
+  slotType: back
+  properties:
+  - statCode: int
+    amount: 10
+  - statCode: hit
+    amount: 1
+  - statCode: sp
+    amount: 23
+- displayName: Cloak of the Brood Lord
+  slotType: back
+  properties:
+  - statCode: sta
+    amount: 10
+  - statCode: int
+    amount: 14
+  - statCode: sp
+    amount: 28
+- displayName: Shroud of Unspoken Names
+  slotType: back
+  properties:
+  - statCode: sta
+    amount: 16
+  - statCode: int
+    amount: 9
+  - statCode: sp
+    amount: 18
+- displayName: Mar'li's Touch
+  slotType: ranged
+  properties:
+  - statCode: sta
+    amount: 5
+  - statCode: int
+    amount: 11
+  - statCode: spi
+    amount: 6
+- displayName: Touch of Chaos
+  slotType: ranged
+  properties:
+  - statCode: sp
+    amount: 18
+- displayName: Band of Dark Dominion
+  slotType: finger
+  properties:
+  - statCode: sta
+    amount: 12
+  - statCode: int
+    amount: 6
+  - statCode: sp
+    amount: 33
+- displayName: Signet Ring of the Bronze Dragonflight
+  slotType: finger
+  properties:
+  - statCode: sta
+    amount: 8
+  - statCode: int
+    amount: 8
+  - statCode: sp
+    amount: 26
+  - statCode: m5
+    amount: 4
+- displayName: Ring of Unspoken Names
+  slotType: finger
+  properties:
+  - statCode: sta
+    amount: 12
+  - statCode: sp
+    amount: 14
+  - statCode: hit
+    amount: 1
+  - statCode: crit
+    amount: 1
+sets:
+- id: nemesis
+  displayName: Nemesis
+  bonuses:
+  - amount: 3
+    bonus:
+      statCode: sp
+      amount: 23
+- id: warlord
+  displayName: Warlord's Threads
+  bonuses:
+  - amount: 2
+    bonus:
+      statCode: sta
+      amount: 20
+  - amount: 6
+    bonus:
+      statCode: sp
+      amount: 23
+- id: demoniac
+  displayName: Demoniac's Threads
+  bonuses:
+  - amount: 2
+    bonus:
+      statCode: sp
+      amount: 12
+- id: bloodvine
+  displayName: Bloodvine Garb
+  bonuses:
+  - amount: 3
+    bonus:
+      statCode: crit
+      amount: 2

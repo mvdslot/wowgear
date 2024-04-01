@@ -1,0 +1,54 @@
+---
+hitCap: 9
+stats:
+- code: sta
+  displayName: Stamina
+  value: 1
+- code: int
+  displayName: Intellect
+  value: 1
+- code: spi
+  displayName: Spirit
+  value: 0.33
+- code: agi
+  displayName: Agility
+  value: 2.8
+- code: str
+  displayName: Strength
+  value: 0.2
+- code: ap
+  displayName: Attack Power
+  value: 1
+- code: dps
+  displayName: Ranged Weapon Damage per Second
+  value: 14
+- code: hit
+  displayName: Hit Chance
+  value: 32
+- code: crit
+  displayName: Crit Chance
+  value: 32
+- code: rs
+  displayName: Shadow Resistance
+  value: 0.2
+- code: rn
+  displayName: Nature Resistance
+  value: 0.2
+- code: rf
+  displayName: Fire Resistance
+  value: 0.25
+- code: rfr
+  displayName: Frost Resistance
+  value: 0.2
+- code: ra
+  displayName: Arcane Resistance
+  value: 0.2
+- code: dodge
+  displayName: Chance to dodge
+  value: 0.2
+- code: h5
+  displayName: Health per 5 sec
+  value: 1
+- code: m5
+  displayName: Mana per 5 sec
+  value: 0.9

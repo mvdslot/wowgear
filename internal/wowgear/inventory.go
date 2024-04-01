@@ -1,8 +1,8 @@
 package wowgear
 
 type Inventory struct {
-	Items []*Item `json:"items,omitempty"`
-	Sets  []*Set  `json:"sets,omitempty"`
+	Items []*Item `yaml:"items,omitempty"`
+	Sets  []*Set  `yaml:"sets,omitempty"`
 }
 
 func (i *Inventory) getItemsForSlotType(slotType string, previous *Item) []*Item {
@@ -11,7 +11,7 @@ func (i *Inventory) getItemsForSlotType(slotType string, previous *Item) []*Item
 	for _, item := range i.Items {
 		if item.SlotType == slotType && (previous == nil || previous != item) {
 			// Main hand
-			if  item.SlotType == "weapon" && previous.SlotType != "weapon" && item.IsOffHand {
+			if item.SlotType == "weapon" && previous.SlotType != "weapon" && item.IsOffHand {
 				continue
 			}
 			// Off hand

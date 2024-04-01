@@ -26,9 +26,9 @@ wowgear -inv="path to inventory file" - stats="path to stats file" [-hitcap=valu
 ## Examples
 
 * A warlock tanking the twin emps might value shadow resistance and stamina higher than the values configured in the stats file:
-* wowgear -inv=warlock_inv.json -stats=warlock_stats.json -overrides=rs=10+sta=2
+* wowgear -inv=warlock_inv.yaml -stats=warlock_stats.yaml -overrides=rs=10+sta=2
 *
 * A hunter in PvP might want to cap hit rating at 6:
-* wowgear -inv=hunter_inv.json -stats=hunter_stats.json -hitcap=6
+* wowgear -inv=hunter_inv.yaml -stats=hunter_stats.yaml -hitcap=6
 
 Sample inventory and stats files for warlock and hunter are provided, you can edit them to your own preferences, or might create different versions for raid, PvP, solo etc.

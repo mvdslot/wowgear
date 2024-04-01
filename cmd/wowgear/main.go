@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"flag"
 	"fmt"
 	"log/slog"
@@ -10,14 +9,15 @@ import (
 	"strings"
 	"time"
 	"wowgear/internal/wowgear"
+
+	"gopkg.in/yaml.v2"
 )
 
 func main() {
 
 	inv := &wowgear.Inventory{}
-
-	invFile := flag.String("inv", "", "json file containing inventory")
-	statsFile := flag.String("stats", "", "json file containing stats and their weights")
+	invFile := flag.String("inv", "", "yaml file containing inventory")
+	statsFile := flag.String("stats", "", "yaml file containing stats and their weights")
 	hitCap := flag.String("hitcap", "", "optional hitcap override")
 	overrides := flag.String("overrides", "", "optional stat overrides")
 	debug := flag.Bool("debug", false, "print debug info")
@@ -25,32 +25,32 @@ func main() {
 	flag.Parse()
 
 	data, err := os.ReadFile(*invFile)
-	
+
 	if err != nil {
 		slog.Error("unable to read", "file", *invFile, "error", err.Error())
 		os.Exit(1)
 	}
 
-	err = json.Unmarshal(data, &inv)
+	err = yaml.Unmarshal(data, &inv)
 
 	if err != nil {
-		slog.Error("unable to unmarshal json", "error", err.Error())
+		slog.Error("unable to unmarshal yaml", "error", err.Error())
 		os.Exit(1)
 	}
 
 	stats := &wowgear.StatList{}
 
 	data, err = os.ReadFile(*statsFile)
-	
+
 	if err != nil {
 		slog.Error("unable to read", "file", *statsFile, "error", err.Error())
 		os.Exit(1)
 	}
 
-	err = json.Unmarshal(data, &stats)
+	err = yaml.Unmarshal(data, &stats)
 
 	if err != nil {
-		slog.Error("unable to unmarshal json", "error", err.Error())
+		slog.Error("unable to unmarshal yaml", "error", err.Error())
 		os.Exit(1)
 	}
 
@@ -70,7 +70,7 @@ func main() {
 				os.Exit(1)
 			}
 
-			for _, stat := range stats.Stats{
+			for _, stat := range stats.Stats {
 				if stat.Code == overrideSplit[0] {
 					stat.Value, err = strconv.ParseFloat(overrideSplit[1], 64)
 					if err != nil {
@@ -109,6 +109,3 @@ func main() {
 		}
 	}
 }
-
-
-

@@ -23,15 +23,15 @@ type Build struct {
 }
 
 type Set struct {
-	Id          string     `json:"id,omitempty"`
-	DisplayName string     `json:"displayName,omitempty"`
-	Bonuses     []SetBonus `json:"bonuses,omitempty"`
+	Id          string     `yaml:"id,omitempty"`
+	DisplayName string     `yaml:"displayName,omitempty"`
+	Bonuses     []SetBonus `yaml:"bonuses,omitempty"`
 }
 
 type SetBonus struct {
-	Amount int      `json:"amount,omitempty"`
-	Bonus  Property `json:"bonus,omitempty"`
-	Value  float64  `json:"value,omitempty"`
+	Amount int      `yaml:"amount,omitempty"`
+	Bonus  Property `yaml:"bonus,omitempty"`
+	Value  float64  `yaml:"value,omitempty"`
 }
 
 var HighestValueFound float64
@@ -257,7 +257,7 @@ func (b *Build) getItemValue(item *Item) (float64, error) {
 func (b *Build) Evaluate(slotNumber int, inv *Inventory) {
 	var previous *Item
 	if slotNumber > 0 {
-		previous = b.Equipments[slotNumber - 1].Item
+		previous = b.Equipments[slotNumber-1].Item
 	}
 
 	if slotNumber == len(b.Equipments) {

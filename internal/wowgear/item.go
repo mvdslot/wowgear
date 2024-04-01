@@ -1,17 +1,17 @@
 package wowgear
 
 type Property struct {
-	StatCode string				`json:"statCode,omitempty"`
-	Amount float64				`json:"amount,omitempty"`
+	StatCode string  `yaml:"statCode,omitempty"`
+	Amount   float64 `yaml:"amount,omitempty"`
 }
 
 type Item struct {
-	DisplayName string			`json:"displayName,omitempty"`
-	Properties []Property		`json:"properties,omitempty"`
-	SlotType string				`json:"slotType,omitempty"`
-	IsTwoHand bool				`json:"isTwoHand,omitempty"`
-	IsMainHand bool				`json:"isMainHand,omitempty"`
-	IsOffHand bool				`json:"isOffHand,omitempty"`
-	SetId string				`json:"setId,omitempty"`
-	Value float64				`json:"value,omitempty"`
+	DisplayName string     `yaml:"displayName,omitempty"`
+	Properties  []Property `yaml:"properties,omitempty"`
+	SlotType    string     `yaml:"slotType,omitempty"`
+	IsTwoHand   bool       `yaml:"isTwoHand,omitempty"`
+	IsMainHand  bool       `yaml:"isMainHand,omitempty"`
+	IsOffHand   bool       `yaml:"isOffHand,omitempty"`
+	SetId       string     `yaml:"setId,omitempty"`
+	Value       float64    `yaml:"value,omitempty"`
 }
