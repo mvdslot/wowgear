@@ -1,8 +1,8 @@
 package wowgear
 
 import (
+	"fmt"
 	"log/slog"
-	"os"
 )
 
 type Slot struct {
@@ -147,10 +147,15 @@ func InitBuild() *Build {
 }
 
 var Combinations int
+var Debug bool
 
 func (b *Build) GetValue(sets []*Set) (float64, error) {
 	total := 0.0
 	Combinations++
+
+	if Debug {
+		fmt.Println(b.AsString())
+	}
 
 	for _, eq := range b.Equipments {
 		itemValue, err := b.getItemValue(eq.Item)
@@ -176,7 +181,51 @@ func (b *Build) GetValue(sets []*Set) (float64, error) {
 		}
 	}
 
+	// Correct for hitcap
+	hitValue := getHitValue(b.StatList)
+	hit := b.getTotalHit()
+
+	if hit > float64(b.StatList.HitCap) {
+		total -= (hit - float64(b.StatList.HitCap)) * hitValue
+	}
+
 	return total, nil
+}
+
+func (b *Build) getTotalHit() float64 {
+	result := 0.0
+	for _, eq := range b.Equipments {
+		if eq.Item != nil {
+			for _, p := range eq.Item.Properties {
+				if p.StatCode == "hit" {
+					result += p.Amount
+				}
+			}
+		}
+	}
+	return result
+}
+
+func getHitValue(stats *StatList) float64 {
+	for _, stat := range stats.Stats {
+		if stat.Code == "hit" {
+			return stat.Value
+		}
+	}
+	return 0.0
+}
+
+func (b *Build) AsString() string {
+	result := ""
+	for _, eq := range b.Equipments {
+		if eq.Item != nil {
+			if result != "" {
+				result += ";"
+			}
+			result += eq.Item.DisplayName
+		}
+	}
+	return result
 }
 
 func (b *Build) countItemsInSet(setId string) int {
@@ -208,13 +257,13 @@ func (b *Build) getItemValue(item *Item) (float64, error) {
 	return item.Value, nil
 }
 
-func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
+func (b *Build) Evaluate(slotNumber int, inv *Inventory) {
 	var previous *Item
-	if fromEquip > 0 {
-		previous = b.Equipments[fromEquip - 1].Item
+	if slotNumber > 0 {
+		previous = b.Equipments[slotNumber - 1].Item
 	}
 
-	if fromEquip == len(b.Equipments) {
+	if slotNumber == len(b.Equipments) {
 		value, err := b.GetValue(inv.Sets)
 		if err != nil {
 			slog.Error(err.Error())
@@ -238,51 +287,26 @@ func (b *Build) Evaluate(fromEquip int, inv *Inventory) {
 		return
 	}
 
-	slotType := b.Equipments[fromEquip].Slot.Type
+	slotType := b.Equipments[slotNumber].Slot.Type
 
 	items := inv.getItemsForSlotType(slotType, previous)
 	if len(items) == 0 {
-		b.Evaluate(fromEquip+1, inv)
+		b.Evaluate(slotNumber+1, inv)
 		return
 	}
 
-	if shouldEvaluateAll(items) {
-		for _, item := range items {
-			b.Equipments[fromEquip].Item = item
-			next := fromEquip + 1
-
-			if item.IsTwoHand {
-				next++
-			}
-
-			b.Evaluate(next, inv)
-		}
-	} else {
-		var bestInSlotValue float64
-		var bestInSlotItem *Item
-		for _, item := range items {
-			itemValue, err := b.getItemValue(item)
-			if err != nil {
-				slog.Error(err.Error())
-				os.Exit(1)
-			}
-			if itemValue > bestInSlotValue {
-				bestInSlotValue = itemValue
-				bestInSlotItem = item
-			}
-		}
-		b.Equipments[fromEquip].Item = bestInSlotItem
-
-		b.Evaluate(fromEquip+1, inv)
-		return
-	}
-}
-
-func shouldEvaluateAll(items []*Item) bool {
 	for _, item := range items {
-		if item.SetId != "" || item.IsTwoHand {
-			return true
+		b.Equipments[slotNumber].Item = item
+		// Forward one slot
+		next := slotNumber + 1
+
+		if item.IsTwoHand {
+			// Unequip off hand if main hand has 2H
+			b.Equipments[next].Item = nil
+			// And forward one extra slot
+			next++
 		}
+
+		b.Evaluate(next, inv)
 	}
-	return false
 }

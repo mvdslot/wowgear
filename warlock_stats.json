@@ -41,12 +41,12 @@
             "value": 0.25
         },
         {
-            "code": "sph",
+            "code": "hit",
             "displayName": "Spell Hit Chance",
             "value": 39.0
         },
         {
-            "code": "spc",
+            "code": "crit",
             "displayName": "Spell Crit Chance",
             "value": 25.0
         },
@@ -90,5 +90,6 @@
             "displayName": "Mana per 5 sec",
             "value": 0.9
         }
-    ]
+    ],
+    "hitCap": 17
 }

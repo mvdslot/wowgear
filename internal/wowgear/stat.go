@@ -9,7 +9,8 @@ type Stat struct {
 }
 
 type StatList struct{
-	Stats []*Stat
+	Stats []*Stat 			`json:"stats,omitempty"`
+	HitCap int				`json:"hitCap,omitempty"`
 } 
 
 func getStatValue(statCode string, statList *StatList) (float64, error) {

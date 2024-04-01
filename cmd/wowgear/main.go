@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"log/slog"
 	"os"
+	"strconv"
 	"time"
 	"wowgear/internal/wowgear"
 )
@@ -16,6 +17,8 @@ func main() {
 
 	invFile := flag.String("inv", "", "json file containing inventory")
 	statsFile := flag.String("stats", "", "json file containing stats and their weights")
+	hitCap := flag.String("hitcap", "", "optional hitcap override")
+	debug := flag.Bool("debug", false, "print debug info")
 
 	flag.Parse()
 
@@ -49,6 +52,15 @@ func main() {
 		os.Exit(1)
 	}
 
+	if *hitCap != "" {
+		stats.HitCap, err = strconv.Atoi(*hitCap)
+		if err != nil {
+			slog.Error("error converting to int", "hitcap", hitCap, "error", err.Error())
+			os.Exit(1)
+		}
+	}
+	wowgear.Debug = *debug
+
 	build := wowgear.InitBuild()
 	build.StatList = stats
 
@@ -63,13 +75,15 @@ func main() {
 			fmt.Printf("%s: %s (worth %f)\n", eq.Slot.DisplayName, eq.Item.DisplayName, eq.Item.Value)
 		}
 	}
-	fmt.Print("\nBonuses:\n")
+	fmt.Println("\nBonuses:")
 	for _, b := range wowgear.BestBuildFound.SetBonuses {
 		fmt.Printf("%s: %f (worth %f)\n", b.Bonus.StatCode, b.Bonus.Amount, b.Value)
 	}
-	fmt.Print("\n")
-	for _, i := range inv.Items {
-		fmt.Printf("%s is worth %f\n", i.DisplayName, i.Value)
+	if wowgear.Debug {
+		fmt.Print("\n")
+		for _, i := range inv.Items {
+			fmt.Printf("%s is worth %f\n", i.DisplayName, i.Value)
+		}
 	}
 }
 

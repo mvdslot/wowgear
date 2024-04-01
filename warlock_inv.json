@@ -26,7 +26,7 @@
                     "amount": 25
                 },
                 {
-                    "statCode": "spc",
+                    "statCode": "crit",
                     "amount": 1
                 }
 
@@ -93,7 +93,7 @@
                     "amount": 10
                 },
                 {
-                    "statCode": "spc",
+                    "statCode": "crit",
                     "amount": 1
                 },
                 {
@@ -205,7 +205,7 @@
                     "amount": 4
                 },
                 {
-                    "statCode": "spc",
+                    "statCode": "crit",
                     "amount": 1
                 },
                 {
@@ -292,7 +292,7 @@
                     "amount": 35
                 },
                 {
-                    "statCode": "sph",
+                    "statCode": "hit",
                     "amount": 1
                 },
                 {
@@ -459,7 +459,7 @@
                     "amount": 10
                 },
                 {
-                    "statCode": "sph",
+                    "statCode": "hit",
                     "amount": 1
                 }
             ]
@@ -474,7 +474,7 @@
                     "amount": 13
                 },
                 {
-                    "statCode": "sph",
+                    "statCode": "hit",
                     "amount": 2
                 },
                 {
@@ -493,7 +493,7 @@
                     "amount": 6
                 },
                 {
-                    "statCode": "sph",
+                    "statCode": "hit",
                     "amount": 1
                 },
                 {
@@ -512,7 +512,7 @@
                     "amount": 16
                 },
                 {
-                    "statCode": "sph",
+                    "statCode": "hit",
                     "amount": 1
                 },
                 {
@@ -530,11 +530,11 @@
                     "amount": 9
                 },
                 {
-                    "statCode": "sph",
+                    "statCode": "hit",
                     "amount": 2
                 },
                 {
-                    "statCode": "spc",
+                    "statCode": "crit",
                     "amount": 1
                 }
             ]
@@ -579,7 +579,7 @@
                     "amount": 18
                 },
                 {
-                    "statCode": "spc",
+                    "statCode": "crit",
                     "amount": 2
                 },
                 {
@@ -606,11 +606,11 @@
                     "amount": 14
                 },
                 {
-                    "statCode": "spc",
+                    "statCode": "crit",
                     "amount": 1
                 },
                 {
-                    "statCode": "sph",
+                    "statCode": "hit",
                     "amount": 1
                 },
                 {
@@ -633,11 +633,11 @@
                     "amount": 33
                 },
                 {
-                    "statCode": "spc",
+                    "statCode": "crit",
                     "amount": 1
                 },
                 {
-                    "statCode": "sph",
+                    "statCode": "hit",
                     "amount": 2
                 },
                 {
@@ -655,7 +655,7 @@
                     "amount": 10
                 },
                 {
-                    "statCode": "sph",
+                    "statCode": "hit",
                     "amount": 1
                 },
                 {
@@ -781,11 +781,11 @@
                     "amount": 14
                 },
                 {
-                    "statCode": "sph",
+                    "statCode": "hit",
                     "amount": 1
                 },
                 {
-                    "statCode": "spc",
+                    "statCode": "crit",
                     "amount": 1
                 }
             ]
@@ -850,7 +850,7 @@
                     "amount": 3,
                     "bonus":
                     {
-                        "statCode": "spc",
+                        "statCode": "crit",
                         "amount": 2
                     }
                 }

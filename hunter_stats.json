@@ -33,12 +33,12 @@
         {
             "code": "hit",
             "displayName": "Hit Chance",
-            "value": 15.0
+            "value": 32.0
         },
         {
             "code": "crit",
             "displayName": "Crit Chance",
-            "value": 18.0
+            "value": 32.0
         },
         {
             "code": "rs",
@@ -80,5 +80,6 @@
             "displayName": "Mana per 5 sec",
             "value": 0.9
         }
-    ]
+    ],
+    "hitCap": 9
 }

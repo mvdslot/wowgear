@@ -11,7 +11,7 @@
             "cwd": "${workspaceFolder}",
             "mode": "debug",
             "program": "cmd\\wowgear\\main.go",
-            "args": ["-inv=.\\hunter_inv.json", "-stats=.\\hunter_stats.json"],
+            "args": ["-inv=.\\warlock_inv.json", "-stats=.\\warlock_stats.json", "-hitcap=6", "-debug=false"],
             "env": {
                 "RUNMODE": "DEBUG"
             }        

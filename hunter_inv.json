@@ -6,6 +6,10 @@
             "setId": "dragonstalker",
             "properties": [
                 {
+                    "statCode": "agi",
+                    "amount": 27
+                },
+                {
                     "statCode": "sta",
                     "amount": 26
                 },
@@ -331,6 +335,24 @@
                 {
                     "statCode": "crit",
                     "amount": 2
+                }
+            ]
+        },
+        {
+            "displayName": "Skythe of the Unseen Path",
+            "slotType": "weapon",
+            "properties": [
+                {
+                    "statCode": "sta",
+                    "amount": 9
+                },
+                {
+                    "statCode": "agi",
+                    "amount": 16
+                },
+                {
+                    "statCode": "m5",
+                    "amount": 3
                 }
             ]
         },
