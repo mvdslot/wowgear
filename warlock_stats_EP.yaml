@@ -1,4 +1,6 @@
 ---
+# Warlock Equivalency Points preset as defined by sixtyupgrades.com
+# Personally I find it nonsense (no points for stamina, really?) but it is just provided as a reference
 hitCap: 17
 stats:
 - code: sta
