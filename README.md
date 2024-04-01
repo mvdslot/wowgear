@@ -2,13 +2,14 @@
 
 ## Prerequisites
 
-Go 1.22 (download from <https://go.dev/doc/install>)
-Git (download from <https://git-scm.com/downloads>)
+* Go 1.22 (download from <https://go.dev/doc/install>)
+* Git (download from <https://git-scm.com/downloads>)
 
 ## Use
 
-Get the sources:
-git clone <https://github.com/mvdslot/wowgear>
+### Get the sources
+
+* git clone <https://github.com/mvdslot/wowgear>
 
 ### Create the executable
 
