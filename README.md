@@ -21,7 +21,7 @@ You can use the ones provided for warlock and hunter as examples, just copy and 
 
 ### Run the executable
 
-wowgear -inv=<path to inventory file> - stats=<path to stats file> [-hitcap=<hitcap>] [-overrides=<stat1=value1[,stat2=value2]...>]
+wowgear -inv="path to inventory file" - stats="path to stats file" [-hitcap=value] [-overrides=<stat1=value1[,stat2=value2]...>]
 
 ## Examples
 
