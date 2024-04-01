@@ -62,7 +62,7 @@ func main() {
 		}
 	}
 	if *overrides != "" {
-		overridesSplit := strings.Split(*overrides, ",")
+		overridesSplit := strings.Split(*overrides, "+")
 		for _, override := range overridesSplit {
 			overrideSplit := strings.Split(override, "=")
 			if len(overrideSplit) != 2 {

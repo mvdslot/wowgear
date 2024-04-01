@@ -21,12 +21,12 @@ You can use the ones provided for warlock and hunter as examples, just copy and 
 
 ### Run the executable
 
-wowgear -inv="path to inventory file" - stats="path to stats file" [-hitcap=value] [-overrides=<stat1=value1[,stat2=value2]...>]
+wowgear -inv="path to inventory file" - stats="path to stats file" [-hitcap=value] [-overrides=<stat1=value1[+stat2=value2]...>]
 
 ## Examples
 
-* A warlock tanking the twin emps might value shadow resistance higher than the value in ths stats file:
-* wowgear -inv=warlock_inv.json -stats=warlock_stats.json -overrides=rs=10
+* A warlock tanking the twin emps might value shadow resistance and stamina higher than the value in the stats file:
+* wowgear -inv=warlock_inv.json -stats=warlock_stats.json -overrides=rs=10+sta=2
 *
 * A hunter in PvP might want to cap hit rating at 6:
 * wowgear -inv=hunter_inv.json -stats=hunter_stats.json -hitcap=6
