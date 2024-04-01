@@ -66,7 +66,7 @@ func main() {
 		for _, override := range overridesSplit {
 			overrideSplit := strings.Split(override, "=")
 			if len(overrideSplit) != 2 {
-				slog.Error("overrides must be in format 'stat1=value1,stat2=value2', e.g. int=1.2,rf=2.0")
+				slog.Error("overrides must be in format 'stat1=value1,stat2=value2', e.g. int=1.2+rf=2.0")
 				os.Exit(1)
 			}
 
@@ -98,7 +98,7 @@ func main() {
 			fmt.Printf("%s: %s (worth %f)\n", eq.Slot.DisplayName, eq.Item.DisplayName, eq.Item.Value)
 		}
 	}
-	fmt.Println("\nBonuses:")
+	fmt.Println("\nSet bonuses:")
 	for _, b := range wowgear.BestBuildFound.SetBonuses {
 		fmt.Printf("%s: %f (worth %f)\n", b.Bonus.StatCode, b.Bonus.Amount, b.Value)
 	}
