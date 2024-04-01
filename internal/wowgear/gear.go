@@ -3,6 +3,7 @@ package wowgear
 import (
 	"fmt"
 	"log/slog"
+	"os"
 )
 
 type Slot struct {
@@ -185,6 +186,7 @@ func (b *Build) GetValue(sets []*Set) (float64, error) {
 	hitValue, err := getStatValue("hit", b.StatList)
 	if err != nil {
 		slog.Error("error getting hit value", "error", err.Error())
+		os.Exit(1)
 	}
 
 	hit := b.getTotalHit()

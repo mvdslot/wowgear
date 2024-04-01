@@ -67,6 +67,7 @@ func main() {
 			overrideSplit := strings.Split(override, "=")
 			if len(overrideSplit) != 2 {
 				slog.Error("overrides must be in format 'stat1=value1,stat2=value2', e.g. int=1.2,rf=2.0")
+				os.Exit(1)
 			}
 
 			for _, stat := range stats.Stats{
