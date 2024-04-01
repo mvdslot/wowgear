@@ -1,4 +1,4 @@
-# Utility to optimize World of Warcraft gear given an inventory and priotization os stats
+# Utility to optimize World of Warcraft gear given an inventory and priotization of stats
 
 ## Prerequisites
 
