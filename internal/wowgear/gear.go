@@ -182,7 +182,11 @@ func (b *Build) GetValue(sets []*Set) (float64, error) {
 	}
 
 	// Correct for hitcap
-	hitValue := getHitValue(b.StatList)
+	hitValue, err := getStatValue("hit", b.StatList)
+	if err != nil {
+		slog.Error("error getting hit value", "error", err.Error())
+	}
+
 	hit := b.getTotalHit()
 
 	if hit > float64(b.StatList.HitCap) {
@@ -204,15 +208,6 @@ func (b *Build) getTotalHit() float64 {
 		}
 	}
 	return result
-}
-
-func getHitValue(stats *StatList) float64 {
-	for _, stat := range stats.Stats {
-		if stat.Code == "hit" {
-			return stat.Value
-		}
-	}
-	return 0.0
 }
 
 func (b *Build) AsString() string {

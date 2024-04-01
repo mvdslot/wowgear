@@ -7,6 +7,7 @@ import (
 	"log/slog"
 	"os"
 	"strconv"
+	"strings"
 	"time"
 	"wowgear/internal/wowgear"
 )
@@ -18,6 +19,7 @@ func main() {
 	invFile := flag.String("inv", "", "json file containing inventory")
 	statsFile := flag.String("stats", "", "json file containing stats and their weights")
 	hitCap := flag.String("hitcap", "", "optional hitcap override")
+	overrides := flag.String("overrides", "", "optional stat overrides")
 	debug := flag.Bool("debug", false, "print debug info")
 
 	flag.Parse()
@@ -59,6 +61,26 @@ func main() {
 			os.Exit(1)
 		}
 	}
+	if *overrides != "" {
+		overridesSplit := strings.Split(*overrides, ",")
+		for _, override := range overridesSplit {
+			overrideSplit := strings.Split(override, "=")
+			if len(overrideSplit) != 2 {
+				slog.Error("overrides must be in format 'stat1=value1,stat2=value2', e.g. int=1.2,rf=2.0")
+			}
+
+			for _, stat := range stats.Stats{
+				if stat.Code == overrideSplit[0] {
+					stat.Value, err = strconv.ParseFloat(overrideSplit[1], 64)
+					if err != nil {
+						slog.Error("error converting to float64", "value", overrideSplit[1], "error", err.Error())
+						os.Exit(1)
+					}
+				}
+			}
+		}
+	}
+
 	wowgear.Debug = *debug
 
 	build := wowgear.InitBuild()
