@@ -1,5 +1,24 @@
 ---
 items:
+- displayName: Choker of the Fire Lord
+  slotType: neck
+  properties:
+  - statCode: sta
+    amount: 7
+  - statCode: int
+    amount: 7
+  - statCode: sp
+    amount: 34
+- displayName: Kezan's Unstoppable Taint
+  slotType: neck
+  setId: demoniac
+  properties:
+  - statCode: sta
+    amount: 13
+  - statCode: int
+    amount: 8
+  - statCode: sp
+    amount: 14
 - displayName: Nemesis Belt
   slotType: waist
   setId: nemesis

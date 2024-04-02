@@ -12,10 +12,10 @@ stats:
   value: 0.33
 - code: agi
   displayName: Agility
-  value: 2.8
+  value: 2.79
 - code: str
   displayName: Strength
-  value: 0.2
+  value: 0.1
 - code: ap
   displayName: Attack Power
   value: 1
@@ -24,10 +24,13 @@ stats:
   value: 14
 - code: hit
   displayName: Hit Chance
-  value: 32
+  value: 21.98
 - code: crit
   displayName: Crit Chance
-  value: 32
+  value: 28.57
+- code: rws
+  displayName: Ranged Weapon Speed
+  value: 100
 - code: rs
   displayName: Shadow Resistance
   value: 0.2

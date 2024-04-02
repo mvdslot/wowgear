@@ -190,6 +190,8 @@ items:
     amount: 17
   - statCode: dps
     amount: 43.97
+  - statCode: rws
+    amount: 2.9
 - displayName: Legionnaire's Chain Hauberk
   slotType: chest
   setId: champion
@@ -215,6 +217,8 @@ items:
     amount: 1
   - statCode: dps
     amount: 41.61
+  - statCode: rws
+    amount: 3.1
 - displayName: General's Chain Legguards
   slotType: legs
   setId: warlord
