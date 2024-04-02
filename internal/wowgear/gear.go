@@ -14,6 +14,7 @@ type Slot struct {
 type Equipment struct {
 	Slot *Slot
 	Item *Item
+	IsBis bool
 }
 
 type Build struct {
@@ -283,6 +284,11 @@ func (b *Build) Evaluate(slotNumber int, inv *Inventory) {
 		return
 	}
 
+	if b.Equipments[slotNumber].IsBis {
+		b.Evaluate(slotNumber+1, inv)
+		return
+	}
+
 	slotType := b.Equipments[slotNumber].Slot.Type
 
 	items := inv.getItemsForSlotType(slotType, previous)
@@ -296,6 +302,8 @@ func (b *Build) Evaluate(slotNumber int, inv *Inventory) {
 	if bis == nil {
 		for _, item := range items {
 			b.Equipments[slotNumber].Item = item
+			b.Equipments[slotNumber].IsBis = false
+
 			// Forward one slot
 			next := slotNumber + 1
 
@@ -311,6 +319,7 @@ func (b *Build) Evaluate(slotNumber int, inv *Inventory) {
 	} else {
 		// Just equip BIS
 		b.Equipments[slotNumber].Item = bis
+		b.Equipments[slotNumber].IsBis = true
 
 		b.Evaluate(slotNumber+1, inv)
 		return

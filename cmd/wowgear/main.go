@@ -128,10 +128,10 @@ func main() {
 		}
 	}
 
-	if wowgear.Debug {
+	//if wowgear.Debug {
 		fmt.Print("\n")
 		for _, i := range inv.Items {
 			fmt.Printf("%s is worth %f\n", i.DisplayName, i.Value)
 		}
-	}
+	//}
 }
