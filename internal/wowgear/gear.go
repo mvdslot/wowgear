@@ -285,6 +285,7 @@ func (b *Build) Evaluate(slotNumber int, inv *Inventory) {
 	}
 
 	if b.Equipments[slotNumber].IsBis {
+		// Already found BIS for this slot
 		b.Evaluate(slotNumber+1, inv)
 		return
 	}
@@ -333,7 +334,7 @@ func (b *Build) findBestInSlotItem(items []*Item) *Item {
 	// or has hit (which might be capped) or is a weapon (we might be stuck with only a main hand weapon left for the off hand)
 	// we need to evaluate further, otherwise we can safely just equip the best in slot item
 	for _, item := range items {
-		if item.SetId != "" || item.SlotType == "weapon" || hasHit(item) {
+		if item.SetId != "" || item.SlotType == "weapon" || item.SlotType == "trinket" || item.SlotType == "finger" || hasHit(item) {
 			return nil
 		}
 		itemValue, err := b.getItemValue(item)

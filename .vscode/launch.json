@@ -11,7 +11,7 @@
             "cwd": "${workspaceFolder}",
             "mode": "debug",
             "program": "cmd\\wowgear\\main.go",
-            "args": ["-inv=.\\warlock_inv.yaml", "-stats=.\\warlock_stats.yaml", "-hitcap=5", "-debug=false", "-overrides=sta=1.3"],
+            "args": ["-inv=.\\hunter_inv.yaml", "-stats=.\\hunter_stats.yaml", "-hitcap=9", "-debug=false"],
             "env": {
                 "RUNMODE": "DEBUG"
             }        

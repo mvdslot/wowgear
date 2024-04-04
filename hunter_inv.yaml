@@ -1,5 +1,20 @@
 ---
 items:
+# - displayName: Crown of Destruction
+#   slotType: head
+#   properties:
+#   - statCode: sta
+#     amount: 23
+#   - statCode: int
+#     amount: 9
+#   - statCode: spi
+#     amount: 9
+#   - statCode: rf
+#     amount: 10
+#   - statCode: crit
+#     amount: 2
+#   - statCode: ap
+#     amount: 44
 - displayName: Dragonstalkers' Helm
   slotType: head
   setId: dragonstalker
