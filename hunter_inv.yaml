@@ -33,6 +33,12 @@ items:
     amount: 10
   - statCode: crit
     amount: 1
+  - statCode: hit
+    amount: 1
+  - statCode: ap
+    amount: 24
+  - statCode: sta
+    amount: 10
 - displayName: Onyxia Tooth Pendant
   slotType: neck
   properties:
@@ -46,6 +52,16 @@ items:
     amount: 1
   - statCode: crit
     amount: 1
+- displayName: Maelstrom's Wrath
+  slotType: neck
+  setId: predator
+  properties:
+  - statCode: sta
+    amount: 9
+  - statCode: int
+    amount: 6
+  - statCode: agi
+    amount: 15
 - displayName: Dragonstalkers' Spaulders
   slotType: shoulder
   setId: dragonstalker
@@ -123,6 +139,38 @@ items:
     amount: 1
   - statCode: hit
     amount: 1
+- displayName: Dragonstalker's Breastplate
+  slotType: chest
+  setId: dragonstalker
+  properties:
+  - statCode: sta
+    amount: 17
+  - statCode: int
+    amount: 14
+  - statCode: spi
+    amount: 6
+  - statCode: rf
+    amount: 10
+  - statCode: rn
+    amount: 10
+  - statCode: agi
+    amount: 34
+  - statCode: crit
+    amount: 1
+- displayName: Dragonstalker's Greaves
+  slotType: feet
+  setId: dragonstalker
+  properties:
+  - statCode: sta
+    amount: 15
+  - statCode: int
+    amount: 6
+  - statCode: spi
+    amount: 6
+  - statCode: rf
+    amount: 10
+  - statCode: agi
+    amount: 30
 - displayName: Dragonstalker's Legguards
   slotType: legs
   setId: dragonstalker
@@ -143,6 +191,12 @@ items:
     amount: 1
   - statCode: crit
     amount: 1
+  - statCode: hit
+    amount: 1
+  - statCode: ap
+    amount: 24
+  - statCode: sta
+    amount: 10
 - displayName: General's Chain Boots
   slotType: feet
   setId: warlord
@@ -276,6 +330,14 @@ items:
     amount: 28
   - statCode: crit
     amount: 1
+- displayName: Warblade of the Hakkari
+  slotType: weapon
+  isMainHand: true
+  properties:
+  - statCode: ap
+    amount: 28
+  - statCode: crit
+    amount: 1
 - displayName: Frostwolf Insignia Rank 6
   slotType: trinket
   properties:
@@ -354,3 +416,17 @@ sets:
     bonus:
       statCode: ap
       amount: 28.8
+- id: warlord
+  displayName: Warlord's Pursuit
+  bonuses:
+  - amount: 2
+    bonus:
+      statCode: sta
+      amount: 20
+- id: predator
+  displayName: Predator's Armor
+  bonuses:
+  - amount: 2
+    bonus:
+      statCode: ap
+      amount: 20

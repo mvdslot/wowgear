@@ -1,53 +1,28 @@
 ---
 items:
-# - displayName: Doomcaller's Circlet
-#   slotType: head
-#   properties:
-#   - statCode: sta
-#     amount: 27
-#   - statCode: int
-#     amount: 24
-#   - statCode: spi
-#     amount: 6
-#   - statCode: sp
-#     amount: 33
-#   - statCode: hit
-#     amount: 1
-#   - statCode: crit
-#     amount: 1
-# - displayName: Mish'undare, Circlet of the Mind Flayer
-#   slotType: head
-#   properties:
-#   - statCode: sta
-#     amount: 15
-#   - statCode: int
-#     amount: 24
-#   - statCode: spi
-#     amount: 9
-#   - statCode: sp
-#     amount: 35
-#   - statCode: crit
-#     amount: 2
-# - displayName: Angelista's Grasp
-#   slotType: waist
-#   properties:
-#   - statCode: sta
-#     amount: 17
-#   - statCode: int
-#     amount: 20
-#   - statCode: spi
-#     amount: 13
-#   - statCode: hit
-#     amount: 2
-# - displayName: Ebony Flame Gloves
-#   slotType: hands
-#   properties:
-#   - statCode: sta
-#     amount: 17
-#   - statCode: int
-#     amount: 12
-#   - statCode: sps
-#     amount: 43
+- displayName: Blessed Qiraji Acolyte Staff
+  slotType: weapon
+  isTwoHand: true
+  properties:
+  - statCode: sta
+    amount: 32
+  - statCode: int
+    amount: 33
+  - statCode: crit
+    amount: 1
+  - statCode: hit
+    amount: 2
+  - statCode: sp
+    amount: 76
+- displayName: Ebony Flame Gloves
+  slotType: hands
+  properties:
+  - statCode: sta
+    amount: 17
+  - statCode: int
+    amount: 12
+  - statCode: sps
+    amount: 43
 - displayName: Choker of the Fire Lord
   slotType: neck
   properties:
@@ -492,3 +467,14 @@ sets:
     bonus:
       statCode: crit
       amount: 2
+- id: zanzil
+  displayName: Zanzil's Concentration
+  bonuses:
+  - amount: 2
+    bonus:
+      statCode: hit
+      amount: 1
+  - amount: 2
+    bonus:
+      statCode: sp
+      amount: 6

@@ -1,0 +1,113 @@
+- displayName: Doomcaller's Circlet
+  slotType: head
+  properties:
+  - statCode: sta
+    amount: 27
+  - statCode: int
+    amount: 24
+  - statCode: spi
+    amount: 6
+  - statCode: sp
+    amount: 33
+  - statCode: hit
+    amount: 1
+  - statCode: crit
+    amount: 1
+- displayName: Mish'undare, Circlet of the Mind Flayer
+  slotType: head
+  properties:
+  - statCode: sta
+    amount: 15
+  - statCode: int
+    amount: 24
+  - statCode: spi
+    amount: 9
+  - statCode: sp
+    amount: 35
+  - statCode: crit
+    amount: 2
+- displayName: Angelista's Grasp
+  slotType: waist
+  properties:
+  - statCode: sta
+    amount: 17
+  - statCode: int
+    amount: 20
+  - statCode: spi
+    amount: 13
+  - statCode: hit
+    amount: 2
+# - displayName: Zanzil's Seal
+#   slotType: finger
+#   setId: zanzil
+#   properties:
+#   - statCode: sta
+#     amount: 10
+#   - statCode: int
+#     amount: 10
+#   - statCode: hit
+#     amount: 1
+#   - statCode: sp
+#     amount: 11
+# - displayName: Zanzil's Band
+#   slotType: finger
+#   setId: zanzil
+#   properties:
+#   - statCode: int
+#     amount: 13
+#   - statCode: hit
+#     amount: 1
+#   - statCode: m5
+#     amount: 4
+# - displayName: Ring of Spell Power
+#   slotType: finger
+#   properties:
+#   - statCode: sp
+#     amount: 33
+# - displayName: High Warlord's Tome of Destruction
+#   slotType: weapon
+#   isOffHand: true
+#   properties:
+#   - statCode: sta
+#     amount: 17
+#   - statCode: int
+#     amount: 16
+#   - statCode: sp
+#     amount: 20
+# - displayName: High Warlord's Spellblade
+#   slotType: weapon
+#   isMainHand: true
+#   properties:
+#   - statCode: sta
+#     amount: 14
+#   - statCode: int
+#     amount: 8
+#   - statCode: sp
+#     amount: 72
+#   - statCode: crit
+#     amount: 1
+# - displayName: High Warlord's War Staff
+#   slotType: weapon
+#   isTwoHand: true
+#   properties:
+#   - statCode: sta
+#     amount: 41
+#   - statCode: int
+#     amount: 23
+#   - statCode: spi
+#     amount: 17
+#   - statCode: sp
+#     amount: 71
+- displayName: Leggings of the Black Blizzard
+  slotType: legs
+  properties:
+  - statCode: sta
+    amount: 14
+  - statCode: int
+    amount: 16
+  - statCode: spi
+    amount: 8
+  - statCode: sp
+    amount: 41
+  - statCode: crit
+    amount: 1

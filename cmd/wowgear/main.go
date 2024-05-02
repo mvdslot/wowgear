@@ -17,9 +17,11 @@ func main() {
 
 	invFile := flag.String("inv", "", "yaml file containing inventory")
 	statsFile := flag.String("stats", "", "yaml file containing stats and their weights")
+	otherFile := flag.String("other", "", "optional yaml file containing other items to test")
 	hitCap := flag.String("hitcap", "", "optional hitcap override")
 	overrides := flag.String("overrides", "", "optional stat overrides")
-	debug := flag.Bool("debug", false, "print debug info")
+	debug := flag.Int("debug", 0, "debug level")
+	export := flag.String("export", "", "export file")
 
 	flag.Parse()
 
@@ -48,6 +50,22 @@ func main() {
 	if err != nil {
 		slog.Error("unable to read", "file", *statsFile, "error", err.Error())
 		os.Exit(1)
+	}
+
+	if *otherFile != "" {
+		otherItems := []*wowgear.Item{}
+		other, err := os.ReadFile(*otherFile)
+		if err != nil {
+			slog.Error("unable to read", "file", *otherFile, "error", err.Error())
+			os.Exit(1)
+		}
+		err = yaml.Unmarshal(other, &otherItems)
+
+		if err != nil {
+			slog.Error("unable to unmarshal yaml", "error", err.Error())
+			os.Exit(1)
+		}
+		inv.Items = append(inv.Items, otherItems...)
 	}
 
 	stats := &wowgear.StatList{}
@@ -128,10 +146,23 @@ func main() {
 		}
 	}
 
-	//if wowgear.Debug {
+	if wowgear.Debug > 0 {
 		fmt.Print("\n")
 		for _, i := range inv.Items {
 			fmt.Printf("%s is worth %f\n", i.DisplayName, i.Value)
 		}
-	//}
+	}
+
+	if *export != "" {	
+		bytes, err := yaml.Marshal(build)
+		if err != nil {
+			slog.Error("error marshaling build to yaml", "error", err.Error())
+			os.Exit(1)
+		}
+		err = os.WriteFile(*export, bytes, 0o644)
+		if err != nil {
+			slog.Error("error writing yaml", "error", err.Error())
+			os.Exit(1)
+		}
+	}
 }

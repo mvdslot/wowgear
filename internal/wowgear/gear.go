@@ -7,20 +7,20 @@ import (
 )
 
 type Slot struct {
-	Type        string
-	DisplayName string
+	Type        string		`yaml:"type,omitempty"`
+	DisplayName string		`yaml:"displayName,omitempty"`
 }
 
 type Equipment struct {
-	Slot *Slot
-	Item *Item
-	IsBis bool
+	Slot *Slot				`yaml:"slot,omitempty"`
+	Item *Item				`yaml:"item,omitempty"`
+	IsBis bool				
 }
 
 type Build struct {
-	Equipments []Equipment
-	StatList   *StatList
-	SetBonuses []*SetBonus
+	Equipments []Equipment	`yaml:"equipments,omitempty"`
+	StatList   *StatList	`yaml:"statList,omitempty"`
+	SetBonuses []*SetBonus	`yaml:"setBonuses,omitempty"`
 }
 
 type Set struct {
@@ -149,13 +149,13 @@ func InitBuild() *Build {
 }
 
 var Combinations int
-var Debug bool
+var Debug int
 
 func (b *Build) GetValue(sets []*Set) (float64, error) {
 	total := 0.0
 	Combinations++
 
-	if Debug {
+	if Debug >= 2 {
 		fmt.Println(b.AsString())
 	}
 
@@ -214,15 +214,18 @@ func (b *Build) getTotalHit() float64 {
 
 func (b *Build) AsString() string {
 	result := ""
+	value := 0.0
+
 	for _, eq := range b.Equipments {
 		if eq.Item != nil {
 			if result != "" {
 				result += ";"
 			}
-			result += eq.Item.DisplayName
+			result += fmt.Sprintf("%s (%f)", eq.Item.DisplayName, eq.Item.Value)
+			value += eq.Item.Value
 		}
 	}
-	return result
+	return fmt.Sprintf("%s: %f", result, value)
 }
 
 func (b *Build) countItemsInSet(setId string) int {
