@@ -11,11 +11,11 @@ func (i *Inventory) getItemsForSlotType(slotType string, previous *Item) []*Item
 	for _, item := range i.Items {
 		if item.SlotType == slotType && (previous == nil || previous != item) {
 			// Main hand
-			if item.SlotType == "weapon" && previous.SlotType != "weapon" && item.IsOffHand {
+			if item.SlotType == "weapon"  && item.IsOffHand && previous != nil && previous.SlotType != "weapon" {
 				continue
 			}
 			// Off hand
-			if item.SlotType == "weapon" && previous.SlotType == "weapon" && (item.IsMainHand || item.IsTwoHand) {
+			if item.SlotType == "weapon" && previous != nil && previous.SlotType == "weapon" && (item.IsMainHand || item.IsTwoHand) {
 				continue
 			}
 

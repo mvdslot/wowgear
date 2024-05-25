@@ -1,0 +1,105 @@
+- displayName: Felheart Shoulder Pads
+  slotType: shoulder
+  properties:
+  - statCode: sta
+    amount: 25
+  - statCode: int
+    amount: 17
+  - statCode: spi
+    amount: 7
+  - statCode: sp
+    amount: 9
+  - statCode: rs
+    amount: 7
+  - statCode: rs
+    amount: 5
+- displayName: Felheart Pants
+  slotType: legs
+  properties:
+  - statCode: sta
+    amount: 20
+  - statCode: int
+    amount: 19
+  - statCode: spi
+    amount: 10
+  - statCode: sp
+    amount: 30
+  - statCode: rs
+    amount: 10
+  - statCode: sta
+    amount: 10
+  - statCode: sp
+    amount: 18
+- displayName: Cloak of Untold Secrets
+  slotType: back
+  properties:
+  - statCode: sta
+    amount: 21
+  - statCode: rs
+    amount: 20
+- displayName: Serpentine Skuller
+  slotType: ranged
+  properties:
+  - statCode: rs
+    amount: 10
+- displayName: Felheart Slippers
+  slotType: feet
+  properties:
+  - statCode: sta
+    amount: 23
+  - statCode: int
+    amount: 11
+  - statCode: rs
+    amount: 7
+  - statCode: sp
+    amount: 18
+- displayName: Amulet of Shadow Shielding
+  slotType: neck
+  properties:
+  - statCode: sta
+    amount: 18
+  - statCode: spi
+    amount: 7
+  - statCode: rs
+    amount: 20
+- displayName: Runed Stygian Belt
+  slotType: waist
+  properties:
+  - statCode: sta
+    amount: 10
+  - statCode: m5
+    amount: 3
+  - statCode: rs
+    amount: 20
+- displayName: Runed Stygian Boots
+  slotType: feet
+  properties:
+  - statCode: sta
+    amount: 8
+  - statCode: m5
+    amount: 4
+  - statCode: rs
+    amount: 20
+- displayName: Runed Stygian Leggings
+  slotType: legs
+  properties:
+  - statCode: sta
+    amount: 13
+  - statCode: m5
+    amount: 6
+  - statCode: rs
+    amount: 25
+  - statCode: sta
+    amount: 10
+  - statCode: sp
+    amount: 18
+- displayName: Peridot Circle of Shadow Resistance
+  slotType: finger
+  properties:
+  - statCode: rs
+    amount: 20
+- displayName: Peridot Circle of Shadow Resistance
+  slotType: finger
+  properties:
+  - statCode: rs
+    amount: 21

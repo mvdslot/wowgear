@@ -1,0 +1,267 @@
+---
+items:
+- displayName: Don Julio's Band
+  slotType: finger
+  properties:
+  - statCode: sta
+    amount: 11
+  - statCode: hit
+    amount: 1
+  - statCode: crit
+    amount: 1
+  - statCode: ap
+    amount: 16
+- displayName: Seal of the Gurubashi Bersderker
+  slotType: finger
+  properties:
+  - statCode: sta
+    amount: 13
+  - statCode: ap
+    amount: 40
+- displayName: Band of Jin
+  slotType: finger
+  setId: mojo 
+  properties:
+  - statCode: sta
+    amount: 8
+  - statCode: hit
+    amount: 1
+  - statCode: agi
+    amount: 14
+- displayName: Seal of Jin
+  slotType: finger
+  setId: mojo 
+  properties:
+  - statCode: sta
+    amount: 8
+  - statCode: crit
+    amount: 1
+  - statCode: ap
+    amount: 20
+- displayName: Truestrike Shoulders
+  slotType: shoulder
+  properties:
+  - statCode: hit
+    amount: 2
+  - statCode: ap
+    amount: 24
+- displayName: Spaulders of Valor
+  slotType: shoulder
+  properties:
+  - statCode: str
+    amount: 11
+  - statCode: agi
+    amount: 9
+  - statCode: sta
+    amount: 17
+- displayName: Bloodsoaked Pauldrons
+  slotType: shoulder
+  properties:
+  - statCode: str
+    amount: 16
+  - statCode: sta
+    amount: 16
+  - statCode: agi
+    amount: 11
+  - statCode: def
+    amount: 3
+- displayName: Slamshot Shoulders
+  slotType: shoulder
+  properties:
+  - statCode: sta
+    amount: 21
+  - statCode: ap
+    amount: 20
+- displayName: Belt of Shrunken Heads
+  slotType: waist
+  properties:
+  - statCode: str
+    amount: 23
+  - statCode: agi
+    amount: 7
+  - statCode: sta
+    amount: 11
+- displayName: Belt of the Sand Reaver
+  slotType: waist
+  properties:
+  - statCode: str
+    amount: 17
+  - statCode: sta
+    amount: 18
+  - statCode: def
+    amount: 5
+- displayName: Brigram Girdle
+  slotType: waist
+  properties:
+  - statCode: str
+    amount: 15
+  - statCode: hit
+    amount: 1
+  - statCode: sta
+    amount: 16
+- displayName: Champion's Plate Helm
+  slotType: head
+  setId: champion
+  properties:
+  - statCode: str
+    amount: 21
+  - statCode: sta
+    amount: 24
+  - statCode: hit
+    amount: 1
+  - statCode: crit
+    amount: 1
+- displayName: Champion's Plate Shoulders
+  slotType: shoulder
+  setId: champion
+  properties:
+  - statCode: str
+    amount: 17
+  - statCode: sta
+    amount: 18
+  - statCode: crit
+    amount: 1
+- displayName: Blood Guard's Plate Gauntlets
+  slotType: hands
+  setId: champion
+  properties:
+  - statCode: str
+    amount: 17
+  - statCode: sta
+    amount: 17
+- displayName: Sacrificial Gauntlets
+  slotType: hands
+  properties:
+  - statCode: str
+    amount: 19
+  - statCode: hit
+    amount: 1
+  - statCode: crit
+    amount: 1
+- displayName: Blood Guard's Plate Greaves
+  slotType: feet
+  setId: champion
+  properties:
+  - statCode: str
+    amount: 10
+  - statCode: agi
+    amount: 9
+  - statCode: sta
+    amount: 23
+- displayName: Legionnaire's Plate Leggings
+  slotType: legs
+  setId: champion
+  properties:
+  - statCode: str
+    amount: 12
+  - statCode: crit
+    amount: 2
+  - statCode: sta
+    amount: 17
+- displayName: Legionnaire's Plate Hauberk
+  slotType: chest
+  setId: champion
+  properties:
+  - statCode: str
+    amount: 21
+  - statCode: crit
+    amount: 1
+  - statCode: sta
+    amount: 23
+- displayName: Eye of Rend
+  slotType: head
+  properties:
+  - statCode: str
+    amount: 13
+  - statCode: sta
+    amount: 7
+  - statCode: crit
+    amount: 2
+- displayName: Slime Kickers
+  slotType: feet
+  properties:
+  - statCode: str
+    amount: 18
+  - statCode: agi
+    amount: 12
+  - statCode: sta
+    amount: 12
+  - statCode: hit
+    amount: 1
+- displayName: Sabatons of Might
+  slotType: feet
+  properties:
+  - statCode: str
+    amount: 15
+  - statCode: sta
+    amount: 26
+  - statCode: rs
+    amount: 7
+  - statCode: def
+    amount: 5
+- displayName: Bloodsoaked Legplates
+  slotType: legs
+  properties:
+  - statCode: str
+    amount: 36
+  - statCode: sta
+    amount: 21
+  - statCode: def
+    amount: 10
+- displayName: Bloodslord's Defender
+  slotType: weapon
+  isMainHand: true
+  properties:
+  - statCode: dps
+    amount: 48.2
+  - statCode: sta
+    amount: 15
+  - statCode: def
+    amount: 4
+- displayName: Warblade of the Hakkari
+  slotType: weapon
+  isOffHand: true
+  properties:
+  - statCode: dps
+    amount: 47.9
+  - statCode: ap
+    amount: 40
+- displayName: Frostbite
+  slotType: weapon
+  isOffHand: true
+  properties:
+  - statCode: dps
+    amount: 42.6
+  - statCode: str
+    amount: 15
+  - statCode: hit     # Orc +5 axes
+    amount: 1
+- displayName: Obsidian Edged Blade
+  slotType: weapon
+  isTwoHand: true
+  properties:
+  - statCode: dps
+    amount: 64.7
+  - statCode: str
+    amount: 42
+  - statCode: hit     # +8 swords
+    amount: 1.6
+sets:
+- id: mojo
+  displayName: Major Mojo Infusion
+  bonuses:
+  - amount: 2
+    bonus:
+      statCode: ap
+      amount: 30
+- id: champion
+  displayName: Champion's Battlearmor
+  bonuses:
+  - amount: 2
+    bonus:
+      statCode: ap
+      amount: 40
+  - amount: 6
+    bonus:
+      statCode: sta
+      amount: 20

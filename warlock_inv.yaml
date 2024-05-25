@@ -76,6 +76,10 @@ items:
     amount: 4
   - statCode: sp
     amount: 32
+  - statCode: sta
+    amount: 10
+  - statCode: sp
+    amount: 18
 - displayName: Nemesis Robes
   slotType: chest
   setId: nemesis
@@ -136,6 +140,10 @@ items:
     amount: 10
   - statCode: sp
     amount: 39
+  - statCode: sta
+    amount: 10
+  - statCode: sp
+    amount: 18
 - displayName: Nemesis Gloves
   slotType: hands
   setId: nemesis
@@ -227,6 +235,8 @@ items:
     amount: 6
   - statCode: sp
     amount: 30
+  - statCode: custom
+    amount: 1
 - displayName: General's Dreadweave Pants
   slotType: legs
   setId: warlord
@@ -237,6 +247,10 @@ items:
     amount: 19
   - statCode: sp
     amount: 37
+  - statCode: sta
+    amount: 10
+  - statCode: sp
+    amount: 18
 - displayName: Warlord's Dreadweave Hood
   slotType: head
   setId: warlord
@@ -247,6 +261,10 @@ items:
     amount: 24
   - statCode: sp
     amount: 32
+  - statCode: sta
+    amount: 10
+  - statCode: sp
+    amount: 18
 - displayName: Warlord's Dreadweave Mantle
   slotType: shoulder
   setId: warlord
@@ -410,7 +428,7 @@ items:
     amount: 12
   - statCode: int
     amount: 6
-  - statCode: sp
+  - statCode: sps
     amount: 33
 - displayName: Signet Ring of the Bronze Dragonflight
   slotType: finger

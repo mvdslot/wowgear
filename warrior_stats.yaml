@@ -1,39 +1,36 @@
 ---
-hitCap: 17
+hitCap: 9
 stats:
 - code: sta
   displayName: Stamina
-  value: 1.3
-- code: int
-  displayName: Intellect
   value: 1
 - code: spi
   displayName: Spirit
-  value: 0.33
+  value: 0.1
 - code: agi
   displayName: Agility
-  value: 0
+  value: 1.2
 - code: str
   displayName: Strength
-  value: 0
-- code: sp
-  displayName: Spellpower
   value: 2
-- code: sps
-  displayName: Spellpower (Shadow)
-  value: 1.75
-- code: spf
-  displayName: Spellpower (Fire)
-  value: 0.25
-- code: hit
-  displayName: Spell Hit Chance
-  value: 39
-- code: crit
-  displayName: Spell Crit Chance
-  value: 25
-- code: spp
-  displayName: Spell Penetration
+- code: ap
+  displayName: Attack Power
   value: 1
+- code: def
+  displayName: Defence
+  value: 1
+- code: dps
+  displayName: Weapon Damage per Second
+  value: 14
+- code: hit
+  displayName: Hit Chance
+  value: 20
+- code: crit
+  displayName: Crit Chance
+  value: 20
+- code: ws
+  displayName: Weapon Speed
+  value: 50
 - code: rs
   displayName: Shadow Resistance
   value: 0.2
@@ -49,12 +46,9 @@ stats:
 - code: ra
   displayName: Arcane Resistance
   value: 0.2
+- code: dodge
+  displayName: Chance to dodge
+  value: 0.2
 - code: h5
   displayName: Health per 5 sec
   value: 1
-- code: m5
-  displayName: Mana per 5 sec
-  value: 0.9
-- code: custom
-  displayName: Custom attribute
-  value: 0.0
